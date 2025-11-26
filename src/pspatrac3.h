@@ -44,26 +44,23 @@
 
 /* Audio Codec Types */
 enum SceAtracCodecType {
-	SCE_ATRAC_AT3PLUS = 0x00001000,
-	SCE_ATRAC_AT3 = 0x00001001,
-
 	// Compat
 
-	PSP_ATRAC_AT3PLUS = SCE_ATRAC_AT3PLUS,
-	PSP_ATRAC_AT3 = SCE_ATRAC_AT3,
+	PSP_ATRAC_AT3PLUS = SCE_CODEC_AT3PLUS,
+	PSP_ATRAC_AT3 = SCE_CODEC_AT3,
 };
 
 /* Remain Frame typical Status */
 enum SceAtracRemainFrameStatus {
-  SCE_ATRAC_ALLDATA_IS_ON_MEMORY = -1,
-  SCE_ATRAC_NONLOOP_STREAM_DATA_IS_ON_MEMORY = -2,
-  SCE_ATRAC_LOOP_STREAM_DATA_IS_ON_MEMORY = -3,
+	SCE_ATRAC_ALLDATA_IS_ON_MEMORY = -1,
+	SCE_ATRAC_NONLOOP_STREAM_DATA_IS_ON_MEMORY = -2,
+	SCE_ATRAC_LOOP_STREAM_DATA_IS_ON_MEMORY = -3,
 
-  PSP_ATRAC_ALLDATA_IS_ON_MEMORY = SCE_ATRAC_ALLDATA_IS_ON_MEMORY,
-  PSP_ATRAC_NONLOOP_STREAM_DATA_IS_ON_MEMORY =
-      SCE_ATRAC_NONLOOP_STREAM_DATA_IS_ON_MEMORY,
-  PSP_ATRAC_LOOP_STREAM_DATA_IS_ON_MEMORY =
-      SCE_ATRAC_LOOP_STREAM_DATA_IS_ON_MEMORY,
+	// Compat
+
+	PSP_ATRAC_ALLDATA_IS_ON_MEMORY = SCE_ATRAC_ALLDATA_IS_ON_MEMORY,
+	PSP_ATRAC_NONLOOP_STREAM_DATA_IS_ON_MEMORY = SCE_ATRAC_NONLOOP_STREAM_DATA_IS_ON_MEMORY,
+	PSP_ATRAC_LOOP_STREAM_DATA_IS_ON_MEMORY = SCE_ATRAC_LOOP_STREAM_DATA_IS_ON_MEMORY,
 };
 
 typedef struct {
@@ -99,7 +96,7 @@ extern "C" {
 /**
  * Get the current Atrac ID of the given codec type.
  *
- * @param codec_type The codec type to get the current Atrac ID. One of `SceAtracCodecType`.
+ * @param codec_type The codec type to get the current Atrac ID. One of `SceCodecType` related to Atrac.
  *
  * @return The current atrac ID on success, or `< 0` on error.
  *
@@ -233,7 +230,7 @@ int sceAtracGetNextSample(int atrac_id, int *num_samples);
 int sceAtracGetMaxSample(int atrac_id, int *max_samples);
 
 /** @attention Requires linking to `pspatrac3plus` stub to be available. */
-int sceAtracGetBufferInfoForReseting(int atrac_id, u32 sample, PspBufferInfo *buffer_info);
+int sceAtracGetBufferInfoForReseting(int atrac_id, u32 sample, SceBufferInfo *buffer_info);
 
 /** @attention Requires linking to `pspatrac3plus` stub to be available. */
 int sceAtracGetChannel(int atrac_id, u32 *channel);

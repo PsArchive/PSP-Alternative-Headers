@@ -5,7 +5,7 @@
  *
  * pspamctrl.h - Prototypes for the sceAmctrl_driver library.
  *
- * Copyright (c) 2024 GrayJack <gr41.j4ck@gmail.com>
+ * Copyright (c) 2025 GrayJack <gr41.j4ck@gmail.com>
  *
  */
 
