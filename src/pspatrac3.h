@@ -13,6 +13,7 @@
 
 #include <psptypes.h>
 #include <psperror.h>
+#include <pspaudiocodec.h>
 
 /* Error code definition */
 #define PSP_ATRAC_SUCCESS                       SCE_OK
@@ -131,7 +132,7 @@ int sceAtracSetDataAndGetID(void *buf, SceSize buf_size);
  *
  * @attention Requires linking to `pspatrac3plus` stub to be available.
 */
-int sceAtracDecodeData(int atrac_id, u16 *samples_buf, int [out]*num_samples, int *is_last_frame, int *remain_frame);
+int sceAtracDecodeData(int atrac_id, u16 *samples_buf, int *num_samples, int *is_last_frame, int *remain_frame);
 
 /**
  * Gets the remaining (not decoded) number of frames.

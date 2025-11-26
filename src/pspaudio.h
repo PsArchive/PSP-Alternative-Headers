@@ -3,7 +3,7 @@
  * -----------------------------------------------------------------------
  * Licensed under the BSD license, see LICENSE in PSPSDK root for details.
  *
- * pspaudio.h - Prototypes for the sceAudio library.
+ * pspaudio.h - Prototypes for the sceAudio and sceAudio_driver libraries.
  *
  * Copyright (c) 2005 Adresd
  * Copyright (c) 2005 Marcus R. Brown <mrbrown@ocgnet.org>
