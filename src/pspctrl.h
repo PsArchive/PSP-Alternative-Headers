@@ -342,6 +342,8 @@ extern "C" {
  * @param cycle The cycle. Normally set to `0`.
  *
  * @return The previous cycle setting.
+ *
+ * @attention Requires linking to `pspctrl` (PSPSDK), `pspctrl_user` (Adrenaline stubs)  or `pspctrl_driver` stubs to be available.
  */
 int sceCtrlSetSamplingCycle(int cycle);
 
@@ -351,6 +353,8 @@ int sceCtrlSetSamplingCycle(int cycle);
  * @param[out] curr_cycle A pointer to hold the current cycle value.
  *
  * @return `0`.
+ *
+ * @attention Requires linking to `pspctrl` (PSPSDK), `pspctrl_user` (Adrenaline stubs)  or `pspctrl_driver` stubs to be available.
  */
 int sceCtrlGetSamplingCycle(int *curr_cycle);
 
@@ -360,6 +364,8 @@ int sceCtrlGetSamplingCycle(int *curr_cycle);
  * @param mode The controller mode. One of `SceCtrlMode`.
  *
  * @return The previous mode.
+ *
+ * @attention Requires linking to `pspctrl` (PSPSDK), `pspctrl_user` (Adrenaline stubs)  or `pspctrl_driver` stubs to be available.
  */
 int sceCtrlSetSamplingMode(int mode);
 
@@ -369,6 +375,8 @@ int sceCtrlSetSamplingMode(int mode);
  * @param[out] mode A pointer to hold the current controller mode.
  *
  * @return `0`.
+ *
+ * @attention Requires linking to `pspctrl` (PSPSDK), `pspctrl_user` (Adrenaline stubs)  or `pspctrl_driver` stubs to be available.
  */
 int sceCtrlGetSamplingMode(int *mode);
 
@@ -390,6 +398,8 @@ int sceCtrlGetSamplingMode(int *mode);
  *
  * @see `SceCtrlLatch`
  * @see `sceCtrlReadLatch()`
+ *
+ * @attention Requires linking to `pspctrl` (PSPSDK), `pspctrl_user` (Adrenaline stubs)  or `pspctrl_driver` stubs to be available.
  */
 int sceCtrlPeekLatch(SceCtrlLatch *latch_data);
 
@@ -447,6 +457,8 @@ int sceCtrlPeekLatch(SceCtrlLatch *latch_data);
  *
  * @see `SceCtrlLatch`
  * @see `sceCtrlPeekLatch()`
+ *
+ * @attention Requires linking to `pspctrl` (PSPSDK), `pspctrl_user` (Adrenaline stubs)  or `pspctrl_driver` stubs to be available.
  */
 int sceCtrlReadLatch(SceCtrlLatch *latch_data);
 
@@ -479,6 +491,8 @@ int sceCtrlReadLatch(SceCtrlLatch *latch_data);
  *        }
  * }
  * @endcode
+ *
+ * @attention Requires linking to `pspctrl` (PSPSDK), `pspctrl_user` (Adrenaline stubs)  or `pspctrl_driver` stubs to be available.
  */
 int sceCtrlPeekBufferPositive(SceCtrlData *pad_data, int num_bufs);
 
@@ -511,6 +525,8 @@ int sceCtrlPeekBufferPositive(SceCtrlData *pad_data, int num_bufs);
  *        }
  * }
  * @endcode
+ *
+ * @attention Requires linking to `pspctrl` (PSPSDK), `pspctrl_user` (Adrenaline stubs)  or `pspctrl_driver` stubs to be available.
  */
 int sceCtrlPeekBufferNegative(SceCtrlData *pad_data, int num_bufs);
 
@@ -527,6 +543,8 @@ int sceCtrlPeekBufferNegative(SceCtrlData *pad_data, int num_bufs);
  * buffers which can be read. Has to be set to a value in the range of `1 - 64`.
  *
  * @return The number of read internal controller buffers on success.
+ *
+ * @attention Requires linking to `pspctrl` (PSPSDK), `pspctrl_user` (Adrenaline stubs)  or `pspctrl_driver` stubs to be available.
  */
 int sceCtrlReadBufferPositive(SceCtrlData *pad_data, int num_bufs);
 
@@ -543,6 +561,8 @@ int sceCtrlReadBufferPositive(SceCtrlData *pad_data, int num_bufs);
  * buffers which can be read. Has to be set to a value in the range of `1 - 64`.
  *
  * @return The number of read internal controller buffers on success.
+ *
+ * @attention Requires linking to `pspctrl` (PSPSDK), `pspctrl_user` (Adrenaline stubs)  or `pspctrl_driver` stubs to be available.
  */
 int sceCtrlReadBufferNegative(SceCtrlData *pad_data, int num_bufs);
 
@@ -562,6 +582,8 @@ int sceCtrlReadBufferNegative(SceCtrlData *pad_data, int num_bufs);
  * buffers which can be read. Has to be set to a value in the range of 1 - 64.
  *
  * @return The number of read internal controller buffers on success.
+ *
+ * @attention Requires linking to `pspctrl` (PSPSDK), `pspctrl_user` (Adrenaline stubs)  or `pspctrl_driver` stubs to be available.
  */
 int sceCtrlPeekBufferPositive2(u32 port, SceCtrlData2 *pad_data, int num_bufs);
 
@@ -581,6 +603,8 @@ int sceCtrlPeekBufferPositive2(u32 port, SceCtrlData2 *pad_data, int num_bufs);
  * buffers which can be read. Has to be set to a value in the range of 1 - 64.
  *
  * @return The number of read internal controller buffers on success.
+ *
+ * @attention Requires linking to `pspctrl` (PSPSDK), `pspctrl_user` (Adrenaline stubs)  or `pspctrl_driver` stubs to be available.
  */
 int sceCtrlPeekBufferNegative2(u32 port, SceCtrlData2 *pad_data, int num_bufs);
 
@@ -600,6 +624,8 @@ int sceCtrlPeekBufferNegative2(u32 port, SceCtrlData2 *pad_data, int num_bufs);
  * buffers which can be read. Has to be set to a value in the range of 1 - 64.
  *
  * @return The number of read internal controller buffers on success.
+ *
+ * @attention Requires linking to `pspctrl` (PSPSDK), `pspctrl_user` (Adrenaline stubs)  or `pspctrl_driver` stubs to be available.
  */
 int sceCtrlReadBufferPositive2(u32 port, SceCtrlData2 *pad_data, int num_bufs);
 
@@ -619,6 +645,8 @@ int sceCtrlReadBufferPositive2(u32 port, SceCtrlData2 *pad_data, int num_bufs);
  * buffers which can be read. Has to be set to a value in the range of 1 - 64.
  *
  * @return The number of read internal controller buffers on success.
+ *
+ * @attention Requires linking to `pspctrl` (PSPSDK), `pspctrl_user` (Adrenaline stubs)  or `pspctrl_driver` stubs to be available.
  */
 int sceCtrlReadBufferNegative2(u32 port, SceCtrlData2 *pad_data, int num_bufs);
 
@@ -633,6 +661,8 @@ int sceCtrlReadBufferNegative2(u32 port, SceCtrlData2 *pad_data, int num_bufs);
  * Set between 1 - 128 to specify the movement on either axis needed by the analog to fire the event.
  *
  * @return < 0 on error.
+ *
+ * @attention Requires linking to `pspctrl` (PSPSDK), `pspctrl_user` (Adrenaline stubs)  or `pspctrl_driver` stubs to be available.
  */
 int sceCtrlSetIdleCancelThreshold(int idlereset, int idleback);
 
@@ -643,6 +673,8 @@ int sceCtrlSetIdleCancelThreshold(int idlereset, int idleback);
  * @param idleback - Movement needed by the analog to bring the PSP back from an idle state.
  *
  * @return < 0 on error.
+ *
+ * @attention Requires linking to `pspctrl` (PSPSDK), `pspctrl_user` (Adrenaline stubs)  or `pspctrl_driver` stubs to be available.
  */
 int sceCtrlGetIdleCancelThreshold(int *idlerest, int *idleback);
 
@@ -667,6 +699,8 @@ int sceCtrlGetIdleCancelThreshold(int *idlerest, int *idleback);
  * sceCtrlSetButtonIntercept(0x10000, 0); // Unset HOME key
  * sceCtrlSetButtonIntercept(0xFFFF, 0);  // Unset mask
  * @endcode
+ *
+ * @attention Requires linking to `pspctrl_driver` stub to be available.
  */
 u32 sceCtrlSetButtonIntercept(u32 buttons, u32 mask_mode);
 
@@ -676,6 +710,8 @@ u32 sceCtrlSetButtonIntercept(u32 buttons, u32 mask_mode);
  * @param buttons The buttons to check for. One or more buttons of `SceCtrlButtons`.
  *
  * @return The button mask mode for the given buttons. One of `SceCtrlButtonMaskMode`.
+ *
+ * @attention Requires linking to `pspctrl_driver` stub to be available.
  */
 u32 sceCtrlGetButtonIntercept(u32 buttons);
 
@@ -688,6 +724,8 @@ u32 sceCtrlGetButtonIntercept(u32 buttons);
  * @param opt Optional user argument. Passed to the callback function as its third argument.
  *
  * @return 0 on success.
+ *
+ * @attention Requires linking to `pspctrl_driver` stub to be available.
  */
 s32 sceCtrlSetSpecialButtonCallback(u32 slot, u32 button_mask, SceKernelButtonCallbackFunction callback, void *opt);
 
