@@ -376,4 +376,9 @@ enum SceAudioErrorCodes {
 	SCE_AUDIO_ERROR_INPUT_BUSY = 0x80260010,
 };
 
+enum SceDisplayErrorCodes {
+	SCE_DISPLAY_ERROR_POINTER = 0x80000103,
+	SCE_DISPLAY_ERROR_ARGUMENT = 0x80000107,
+};
+
 #endif // __PSPERROR_H__
