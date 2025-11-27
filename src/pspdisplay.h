@@ -103,9 +103,9 @@ int sceDisplaySetMode(int mode, int width, int height);
 /**
  * Get display mode
  *
- * @param mode A pointer to an integer to receive the current mode.
- * @param width A pointer to an integer to receive the current width.
- * @param height A pointer to an integer to receive the current height.
+ * @param[out] mode A pointer to an integer to receive the current mode.
+ * @param[out] width A pointer to an integer to receive the current width.
+ * @param[out] height A pointer to an integer to receive the current height.
  *
  * @return `0` on success, `< 0` on error.
  *
@@ -116,7 +116,7 @@ int sceDisplayGetMode(int *mode, int *width, int *height);
 /**
  * Sets a framebuf to be e used to display.
  *
- * @param buf_addr The address of the start of framebuffer
+ * @param[in] buf_addr The address of the start of framebuffer
  * @param buf_width The buffer width (must be power of 2)
  * @param pixel_format The pixel format to use. One of `SceDisplayPixelFormats`.
  * @param sync The sync policy to use. One of `SceDisplaySetBufSync`
@@ -130,9 +130,9 @@ int sceDisplaySetFrameBuf(void *buf_addr, int buf_width, int pixel_format, int s
 /**
  * Get Display Framebuffer information
  *
- * @param buf_addr A pointer to void* to receive address of start of framebuffer
- * @param buf_width A pointer to int to receive buffer width (must be power of 2)
- * @param pixel_format A pointer to int to receive one of `SceDisplayPixelFormats`.
+ * @param[out] buf_addr A pointer to void* to receive address of start of framebuffer
+ * @param[out] buf_width A pointer to int to receive buffer width (must be power of 2)
+ * @param[out] pixel_format A pointer to int to receive one of `SceDisplayPixelFormats`.
  * @param sync The sync policy. One of `SceDisplaySetBufSync`
  *
  * @return `0` on success, `< 0` on error.
@@ -227,8 +227,8 @@ void sceDisplaySetBrightness(int level,int unk1);
 /**
  * Get current display brightness.
  *
- * @param level A pointer to int to receive the current brightness level (`0-100`).
- * @param unk1 A pointer to int, receives unknown, it's `1` or `0`.
+ * @param[out] level A pointer to int to receive the current brightness level (`0-100`).
+ * @param[out] unk1 A pointer to int, receives unknown, it's `1` or `0`.
  *
  * @attention Requires linking to `pspdisplay_driver` stub to be available.
  */
@@ -258,10 +258,10 @@ int sceDisplay_driver_63E22A26(int priority, void *buf_addr, int buf_width, int 
  * Get Display Framebuffer information
  *
  * @param priority The priority for the framebuffer.
- * @param buf_addr A pointer to void* to receive address of start of framebuffer
- * @param buf_width A pointer to int to receive buffer width (must be power of 2)
- * @param pixel_format A pointer to int to receive one of `SceDisplayPixelFormats`.
- * @param sync The sync policy. One of `SceDisplaySetBufSync`
+ * @param[out] buf_addr A pointer to void* to receive address of start of framebuffer
+ * @param[out] buf_width A pointer to int to receive buffer width (must be power of 2)
+ * @param[out] pixel_format A pointer to int to receive one of `SceDisplayPixelFormats`.
+ * @param[out] sync The sync policy. One of `SceDisplaySetBufSync`
  *
  * @return `0` on success, `< 0` on error.
  *
@@ -294,10 +294,10 @@ int sceDisplay_driver_3E17FE8D(int priority, void *buf_addr, int buf_width, int 
  * Get Display Framebuffer information
  *
  * @param priority The priority for the framebuffer.
- * @param buf_addr A pointer to void* to receive address of start of framebuffer
- * @param buf_width A pointer to int to receive buffer width (must be power of 2)
- * @param pixel_format A pointer to int to receive one of `SceDisplayPixelFormats`.
- * @param sync The sync policy. One of `SceDisplaySetBufSync`
+ * @param[out] buf_addr A pointer to void* to receive address of start of framebuffer
+ * @param[out] buf_width A pointer to int to receive buffer width (must be power of 2)
+ * @param[out] pixel_format A pointer to int to receive one of `SceDisplayPixelFormats`.
+ * @param[out] sync The sync policy. One of `SceDisplaySetBufSync`
  *
  * @return `0` on success, `< 0` on error.
  *

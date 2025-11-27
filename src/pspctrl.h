@@ -391,7 +391,7 @@ int sceCtrlGetSamplingMode(int *mode);
  * the data returned is the accumulated latch data since the last time `sceCtrlReadLatch()` was called. Consequently,
  * the returned data should not be relied on whether a button is currently in a pressed or released state.
  *
- * @param latch_data A pointer to a `SceCtrlLatch` variable which is to receive the accumulated button latch data.
+ * @param[out] latch_data A pointer to a `SceCtrlLatch` variable which is to receive the accumulated button latch data.
  *
  * @return On success, the number of times the controller service performed sampling since the last time
  * `sceCtrlReadLatch()` was called. `< 0` on error.
@@ -413,7 +413,7 @@ int sceCtrlPeekLatch(SceCtrlLatch *latch_data);
  * Compared to `sceCtrlPeekLatch()`, calling this API will result in clearing the internal latch data. As such,
  * calling code might have to explicitly wait for the controller service to update its collected latch data.
  *
- * @param latch_data A pointer to a `SceCtrlLatch` variable which is to receive the current button latch data.
+ * @param[out] latch_data A pointer to a `SceCtrlLatch` variable which is to receive the current button latch data.
  *
  * @return On success, the number of times the controller service performed sampling since the last time
  * `sceCtrlReadLatch()` was called. `< 0` on error.
@@ -469,7 +469,7 @@ int sceCtrlReadLatch(SceCtrlLatch *latch_data);
  * update interval to be performed.
  * The obtained data will be the latest transferred button data into the internal controller buffers.
  *
- * @param pad_data A pointer to one or more `SceCtrlData` variables to receive controller state data. The obtained
+ * @param[out] pad_data A pointer to one or more `SceCtrlData` variables to receive controller state data. The obtained
  * button data is represented in positive logic.
  * @param num_bufs The number of internal controller buffers to read. There are 64 internal controller
  * buffers which can be read. Has to be set to a value in the range of 1 - 64.
@@ -503,7 +503,7 @@ int sceCtrlPeekBufferPositive(SceCtrlData *pad_data, int num_bufs);
  * update interval to be performed.
  * The obtained data will be the latest transferred button data into the internal controller buffers.
  *
- * @param pad_data A pointer to one or more `SceCtrlData` variables to receive controller state data. The obtained
+ * @param[out] pad_data A pointer to one or more `SceCtrlData` variables to receive controller state data. The obtained
  * button data is represented in negative logic.
  * @param num_bufs The number of internal controller buffers to read. There are 64 internal controller
  * buffers which can be read. Has to be set to a value in the range of `1 - 64`.
@@ -537,7 +537,7 @@ int sceCtrlPeekBufferNegative(SceCtrlData *pad_data, int num_bufs);
  * before obtaining the data. The read data is the newest transferred data into the internal controller
  * buffers.
  *
- * @param pad_data A pointer to one or more `SceCtrlData` variables to receive controller state data. The obtained
+ * @param[out] pad_data A pointer to one or more `SceCtrlData` variables to receive controller state data. The obtained
  * data is represented in positive logic.
  * @param num_bufs The number of internal controller buffers to read. There are 64 internal controller
  * buffers which can be read. Has to be set to a value in the range of `1 - 64`.
@@ -555,7 +555,7 @@ int sceCtrlReadBufferPositive(SceCtrlData *pad_data, int num_bufs);
  * before obtaining the data. The read data is the newest transferred data into the internal controller
  * buffers.
  *
- * @param pad_data A pointer to one or more `SceCtrlData` variables to receive controller state data. The obtained
+ * @param[out] pad_data A pointer to one or more `SceCtrlData` variables to receive controller state data. The obtained
  * data is represented in negative logic.
  * @param num_bufs The number of internal controller buffers to read. There are 64 internal controller
  * buffers which can be read. Has to be set to a value in the range of `1 - 64`.
@@ -575,8 +575,8 @@ int sceCtrlReadBufferNegative(SceCtrlData *pad_data, int num_bufs);
  *
  * @remark You need to call `sceCtrl_driver_E467BEC8()` before initial use of this API or its related ones.
  *
- * @param port Pass a valid element of `SceCtrlPort` (either 1 or 2).
- * @param pad_data A pointer to one or more `SceCtrlData2` variables to receive controller state data. The obtained
+ * @param port The port to retrieve controller state data. Pass a valid element of `SceCtrlPort` (either 1 or 2).
+ * @param[out] pad_data A pointer to one or more `SceCtrlData2` variables to receive controller state data. The obtained
  * button data is represented in positive logic.
  * @param num_bufs The number of internal controller buffers to read. There are 64 internal controller
  * buffers which can be read. Has to be set to a value in the range of 1 - 64.
@@ -596,8 +596,8 @@ int sceCtrlPeekBufferPositive2(u32 port, SceCtrlData2 *pad_data, int num_bufs);
  *
  * @remark You need to call `sceCtrl_driver_E467BEC8()` before initial use of this API or its related ones.
  *
- * @param port Pass a valid element of `SceCtrlPort` (either 1 or 2).
- * @param pad_data A pointer to one or more `SceCtrlData2` variables to receive controller state data. The obtained
+ * @param port The port to retrieve controller state data. Pass a valid element of `SceCtrlPort` (either 1 or 2).
+ * @param[out] pad_data A pointer to one or more `SceCtrlData2` variables to receive controller state data. The obtained
  * button data is represented in negative logic.
  * @param num_bufs The number of internal controller buffers to read. There are 64 internal controller
  * buffers which can be read. Has to be set to a value in the range of 1 - 64.
@@ -617,8 +617,8 @@ int sceCtrlPeekBufferNegative2(u32 port, SceCtrlData2 *pad_data, int num_bufs);
  *
  * @remark You need to call `sceCtrl_driver_E467BEC8()` before initial use of this API or its related ones.
  *
- * @param port Pass a valid element of `SceCtrlPort` (either 1 or 2).
- * @param pad_data A pointer to one or more `SceCtrlData2` variables to receive controller state data. The obtained
+ * @param port The port to retrieve controller state data. Pass a valid element of `SceCtrlPort` (either 1 or 2).
+ * @param[out] pad_data A pointer to one or more `SceCtrlData2` variables to receive controller state data. The obtained
  * button data is represented in positive logic.
  * @param num_bufs The number of internal controller buffers to read. There are 64 internal controller
  * buffers which can be read. Has to be set to a value in the range of 1 - 64.
@@ -638,8 +638,8 @@ int sceCtrlReadBufferPositive2(u32 port, SceCtrlData2 *pad_data, int num_bufs);
  *
  * @remark You need to call `sceCtrl_driver_E467BEC8()` before initial use of this API or its related ones.
  *
- * @param port Pass a valid element of `SceCtrlPort` (either 1 or 2).
- * @param pad_data A pointer to one or more `SceCtrlData2` variables to receive controller state data. The obtained
+ * @param port The port to retrieve controller state data. Pass a valid element of `SceCtrlPort` (either 1 or 2).
+ * @param[out] pad_data A pointer to one or more `SceCtrlData2` variables to receive controller state data. The obtained
  * button data is represented in negative logic.
  * @param num_bufs The number of internal controller buffers to read. There are 64 internal controller
  * buffers which can be read. Has to be set to a value in the range of 1 - 64.
@@ -660,7 +660,7 @@ int sceCtrlReadBufferNegative2(u32 port, SceCtrlData2 *pad_data, int num_bufs);
  * Set to 0 for idle timer to be cancelled even if the analog is not moved.
  * Set between 1 - 128 to specify the movement on either axis needed by the analog to fire the event.
  *
- * @return < 0 on error.
+ * @return `< 0` on error.
  *
  * @attention Requires linking to `pspctrl` (PSPSDK), `pspctrl_user` (Adrenaline stubs)  or `pspctrl_driver` stubs to be available.
  */
@@ -669,10 +669,10 @@ int sceCtrlSetIdleCancelThreshold(int idlereset, int idleback);
 /**
  * Get the idle threshold values.
  *
- * @param idlerest - Movement needed by the analog to reset the idle timer.
- * @param idleback - Movement needed by the analog to bring the PSP back from an idle state.
+ * @param[out] idlerest - Movement needed by the analog to reset the idle timer.
+ * @param[out] idleback - Movement needed by the analog to bring the PSP back from an idle state.
  *
- * @return < 0 on error.
+ * @return `< 0` on error.
  *
  * @attention Requires linking to `pspctrl` (PSPSDK), `pspctrl_user` (Adrenaline stubs)  or `pspctrl_driver` stubs to be available.
  */
@@ -723,7 +723,7 @@ u32 sceCtrlGetButtonIntercept(u32 buttons);
  * @param callback A pointer to the callback function handling the button callbacks.
  * @param opt Optional user argument. Passed to the callback function as its third argument.
  *
- * @return 0 on success.
+ * @return `0` on success.
  *
  * @attention Requires linking to `pspctrl_driver` stub to be available.
  */
