@@ -8,6 +8,7 @@
  * Copyright (c) 2005 Adresd
  *
  */
+
 #ifndef __HPRM_H__
 #define __HPRM_H__
 
