@@ -65,18 +65,6 @@ enum SceAtracRemainFrameStatus {
 };
 
 typedef struct {
-	u8 *pucWritePositionFirstBuf;
-	u32 uiWritableByteFirstBuf;
-	u32 uiMinWriteByteFirstBuf;
-	u32 uiReadPositionFirstBuf;
-
-	u8 *pucWritePositionSecondBuf;
-	u32 uiWritableByteSecondBuf;
-	u32 uiMinWriteByteSecondBuf;
-	u32 uiReadPositionSecondBuf;
-} PspBufferInfo;
-
-typedef struct {
 	u8 *write_pos_first_buf;
 	u32 writable_size_first_buf;
 	u32 min_write_size_first_buf;
@@ -86,7 +74,19 @@ typedef struct {
 	u32 writable_size_second_buf;
 	u32 min_write_size_second_buf;
 	u32 read_pos_second_buf;
-} SceBufferInfo;
+} PspBufferInfo;
+
+// Compat with old definition
+
+typedef PspBufferInfo PspBufferInfo;
+#define pucWritePositionFirstBuf write_pos_first_buf
+#define uiWritableByteFirstBuf writable_size_first_buf
+#define uiMinWriteByteFirstBuf min_write_size_first_buf
+#define uiReadPositionFirstBuf read_pos_first_buf
+#define pucWritePositionSecondBuf pucWritePositionSecondBuf
+#define uiWritableByteSecondBuf uiWritableByteSecondBuf
+#define uiMinWriteByteSecondBuf uiMinWriteByteSecondBuf
+#define uiReadPositionSecondBuf uiReadPositionSecondBuf
 
 #ifdef __cplusplus
 extern "C" {

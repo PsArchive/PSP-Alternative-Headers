@@ -210,20 +210,27 @@ typedef struct SceCtrlData {
      * The time stamp of the time during which sampling was performed. Time unit is microseconds.
      * Can be used to get the time period of a button pressing event.
      */
-	u32 TimeStamp;
+	u32 timestamp;
 	/** Bit mask containing zero or more of `SceCtrlButtons`. */
-	u32 Buttons;
+	u32 buttons;
 	/** Left analogue stick, X axis (0 - 0xFF). Left = 0, Right = 0xFF. */
-	u8 Lx;
+	u8 lx;
 	/** Left analogue stick, Y axis (0 - 0xFF). Up = 0, Down = 0xFF. */
-	u8 Ly;
+	u8 ly;
 	/** Right analogue stick, X axis. Filled with 0 if input source doesn't allow second analog input. */
-	u8 Rx;
+	u8 rx;
 	/** Right analogue stick, Y axis. Filled with 0 if input source doesn't allow second analog input. */
-	u8 Ry;
+	u8 ry;
 	/** Reserved. */
 	u32	reserved;
 } SceCtrlData;
+
+#define TimeStamp timestamp
+#define Buttons buttons
+#define Lx lx
+#define Ly ly
+#define Rx rx
+#define Ry ry
 
 /**
  * This structure is for obtaining button data (button/analog stick information) from the
