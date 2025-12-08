@@ -80,7 +80,7 @@ extern "C" {
   *
   * @return `0` if no disc present, anything else indicates a disc is inserted.
   *
-  * @attention Requires linking to `pspumd` (PSPSDK), `pspumd_user` (Adrenaline stubs)  or `pspumd_driver` (PSPSDK), `pspumd_kernel` (Adrenaline stubs) stubs to be available.
+  * @attention Requires linking to `pspumd` or `pspumd_driver` (PSPSDK), `pspumd_kernel` (Adrenaline stubs) stubs to be available.
   */
 int sceUmdCheckMedium(void);
 
@@ -91,7 +91,7 @@ int sceUmdCheckMedium(void);
   *
   * @return `0` on success, `< 0` on error.
   *
-  * @attention Requires linking to `pspumd` (PSPSDK), `pspumd_user` (Adrenaline stubs)  or `pspumd_driver` (PSPSDK), `pspumd_kernel` (Adrenaline stubs) stubs to be available.
+  * @attention Requires linking to `pspumd` or `pspumd_driver` (PSPSDK), `pspumd_kernel` (Adrenaline stubs) stubs to be available.
   */
 int sceUmdGetDiscInfo(SceUmdInfo *info);
 
@@ -103,7 +103,7 @@ int sceUmdGetDiscInfo(SceUmdInfo *info);
   *
   * @return `0` on success, `< 0` on error.
   *
-  * @attention Requires linking to `pspumd` (PSPSDK), `pspumd_user` (Adrenaline stubs)  or `pspumd_driver` (PSPSDK), `pspumd_kernel` (Adrenaline stubs) stubs to be available.
+  * @attention Requires linking to `pspumd` or `pspumd_driver` (PSPSDK), `pspumd_kernel` (Adrenaline stubs) stubs to be available.
   *
   * @par Example:
   * @code
@@ -129,7 +129,7 @@ int sceUmdActivate(int unit, const char *drive);
   *
   * @return `0` on success, `< 0` on error.
   *
-  * @attention Requires linking to `pspumd` (PSPSDK), `pspumd_user` (Adrenaline stubs)  or `pspumd_driver` (PSPSDK), `pspumd_kernel` (Adrenaline stubs) stubs to be available.
+  * @attention Requires linking to `pspumd` or `pspumd_driver` (PSPSDK), `pspumd_kernel` (Adrenaline stubs) stubs to be available.
   */
 int sceUmdDeactivate(int unit, const char *drive);
 
@@ -140,7 +140,7 @@ int sceUmdDeactivate(int unit, const char *drive);
   *
   * @return `0` on success, `< 0` on error.
   *
-  * @attention Requires linking to `pspumd` (PSPSDK), `pspumd_user` (Adrenaline stubs)  or `pspumd_driver` (PSPSDK), `pspumd_kernel` (Adrenaline stubs) stubs to be available.
+  * @attention Requires linking to `pspumd` or `pspumd_driver` (PSPSDK), `pspumd_kernel` (Adrenaline stubs) stubs to be available.
   */
 int sceUmdWaitDriveStat(int stat);
 
@@ -152,7 +152,7 @@ int sceUmdWaitDriveStat(int stat);
   *
   * @return `0` on success, `< 0` on error.
   *
-  * @attention Requires linking to `pspumd` (PSPSDK), `pspumd_user` (Adrenaline stubs)  or `pspumd_driver` (PSPSDK), `pspumd_kernel` (Adrenaline stubs) stubs to be available.
+  * @attention Requires linking to `pspumd` or `pspumd_driver` (PSPSDK), `pspumd_kernel` (Adrenaline stubs) stubs to be available.
   */
 int sceUmdWaitDriveStatWithTimer(int stat, u32 timeout);
 
@@ -164,7 +164,7 @@ int sceUmdWaitDriveStatWithTimer(int stat, u32 timeout);
   *
   * @return `0` on success, `< 0` on error.
   *
-  * @attention Requires linking to `pspumd` (PSPSDK), `pspumd_user` (Adrenaline stubs)  or `pspumd_driver` (PSPSDK), `pspumd_kernel` (Adrenaline stubs) stubs to be available.
+  * @attention Requires linking to `pspumd` or `pspumd_driver` (PSPSDK), `pspumd_kernel` (Adrenaline stubs) stubs to be available.
   */
 int sceUmdWaitDriveStatCB(int stat, u32 timeout);
 
@@ -173,7 +173,7 @@ int sceUmdWaitDriveStatCB(int stat, u32 timeout);
   *
   * @return `0` on success, `< 0` on error.
   *
-  * @attention Requires linking to `pspumd` (PSPSDK), `pspumd_user` (Adrenaline stubs)  or `pspumd_driver` (PSPSDK), `pspumd_kernel` (Adrenaline stubs) stubs to be available.
+  * @attention Requires linking to `pspumd` or `pspumd_driver` (PSPSDK), `pspumd_kernel` (Adrenaline stubs) stubs to be available.
   */
 int sceUmdCancelWaitDriveStat(void);
 
@@ -182,7 +182,7 @@ int sceUmdCancelWaitDriveStat(void);
   *
   * @return `0` on success, `< 0` on error., one or more of ::SceUmdState on success
   *
-  * @attention Requires linking to `pspumd` (PSPSDK), `pspumd_user` (Adrenaline stubs)  or `pspumd_driver` (PSPSDK), `pspumd_kernel` (Adrenaline stubs) stubs to be available.
+  * @attention Requires linking to `pspumd` or `pspumd_driver` (PSPSDK), `pspumd_kernel` (Adrenaline stubs) stubs to be available.
   */
 int sceUmdGetDriveStat(void);
 
@@ -191,7 +191,7 @@ int sceUmdGetDriveStat(void);
   *
   * @return `0` on success, `< 0` on error., the error code on success
   *
-  * @attention Requires linking to `pspumd` (PSPSDK), `pspumd_user` (Adrenaline stubs)  or `pspumd_driver` (PSPSDK), `pspumd_kernel` (Adrenaline stubs) stubs to be available.
+  * @attention Requires linking to `pspumd` or `pspumd_driver` (PSPSDK), `pspumd_kernel` (Adrenaline stubs) stubs to be available.
   */
 int sceUmdGetErrorStat(void);
 
@@ -204,7 +204,7 @@ int sceUmdGetErrorStat(void);
   *
   * @return `0` on success, `< 0` on error.
   *
-  * @attention Requires linking to `pspumd` (PSPSDK), `pspumd_user` (Adrenaline stubs)  or `pspumd_driver` (PSPSDK), `pspumd_kernel` (Adrenaline stubs) stubs to be available.
+  * @attention Requires linking to `pspumd` or `pspumd_driver` (PSPSDK), `pspumd_kernel` (Adrenaline stubs) stubs to be available.
   *
   * @par Example:
   * @code
@@ -225,7 +225,7 @@ int sceUmdRegisterUMDCallBack(int cb_id);
   *
   * @return `0` on success, `< 0` on error.
   *
-  * @attention Requires linking to `pspumd` (PSPSDK), `pspumd_user` (Adrenaline stubs)  or `pspumd_driver` (PSPSDK), `pspumd_kernel` (Adrenaline stubs) stubs to be available.
+  * @attention Requires linking to `pspumd` or `pspumd_driver` (PSPSDK), `pspumd_kernel` (Adrenaline stubs) stubs to be available.
   */
 int sceUmdUnRegisterUMDCallBack(int cbid);
 
@@ -234,7 +234,7 @@ int sceUmdUnRegisterUMDCallBack(int cbid);
   *
   * @return `0` on success, `< 0` on error.
   *
-  * @attention Requires linking to `pspumd` (PSPSDK), `pspumd_user` (Adrenaline stubs)  or `pspumd_driver` (PSPSDK), `pspumd_kernel` (Adrenaline stubs) stubs to be available.
+  * @attention Requires linking to `pspumd` or `pspumd_driver` (PSPSDK), `pspumd_kernel` (Adrenaline stubs) stubs to be available.
   */
 int sceUmdReplacePermit(void);
 
@@ -243,7 +243,7 @@ int sceUmdReplacePermit(void);
   *
   * @return `0` on success, `< 0` on error.
   *
-  * @attention Requires linking to `pspumd` (PSPSDK), `pspumd_user` (Adrenaline stubs)  or `pspumd_driver` (PSPSDK), `pspumd_kernel` (Adrenaline stubs) stubs to be available.
+  * @attention Requires linking to `pspumd` or `pspumd_driver` (PSPSDK), `pspumd_kernel` (Adrenaline stubs) stubs to be available.
   */
 int sceUmdReplaceProhibit(void);
 

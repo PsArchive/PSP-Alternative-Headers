@@ -37,7 +37,7 @@ extern "C" {
  *
  * @attention Requires linking to `pspmp3` stub to be available.
  *
- * @attention Requires linking to `pspopenpsid` (PSPSDK), `pspopenpsid_user` (Adrenaline stubs) or `pspopenpsid_driver` stubs to be available.
+ * @attention Requires linking to `pspopenpsid` or `pspopenpsid_driver` stubs to be available.
  */
 int sceOpenPSIDGetOpenPSID(SceOpenPSID *openpsid);
 

@@ -96,7 +96,7 @@ extern "C" {
  *
  * @return When error, a negative value is returned.
  *
- * @attention Requires linking to `pspdisplay` (PSPSDK), `pspdisplay_user` (Adrenaline stubs)  or `pspdisplay_driver` stubs to be available.
+ * @attention Requires linking to `pspdisplay` or `pspdisplay_driver` stubs to be available.
  */
 int sceDisplaySetMode(int mode, int width, int height);
 
@@ -109,7 +109,7 @@ int sceDisplaySetMode(int mode, int width, int height);
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `pspdisplay` (PSPSDK), `pspdisplay_user` (Adrenaline stubs)  or `pspdisplay_driver` stubs to be available.
+ * @attention Requires linking to `pspdisplay` or `pspdisplay_driver` stubs to be available.
  */
 int sceDisplayGetMode(int *mode, int *width, int *height);
 
@@ -123,7 +123,7 @@ int sceDisplayGetMode(int *mode, int *width, int *height);
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `pspdisplay` (PSPSDK), `pspdisplay_user` (Adrenaline stubs)  or `pspdisplay_driver` stubs to be available.
+ * @attention Requires linking to `pspdisplay` or `pspdisplay_driver` stubs to be available.
  */
 int sceDisplaySetFrameBuf(void *buf_addr, int buf_width, int pixel_format, int sync);
 
@@ -137,77 +137,77 @@ int sceDisplaySetFrameBuf(void *buf_addr, int buf_width, int pixel_format, int s
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `pspdisplay` (PSPSDK), `pspdisplay_user` (Adrenaline stubs)  or `pspdisplay_driver` stubs to be available.
+ * @attention Requires linking to `pspdisplay` or `pspdisplay_driver` stubs to be available.
  */
 int sceDisplayGetFrameBuf(void **buf_addr, int *buf_width, int *pixel_format, int sync);
 
 /**
  * Number of vertical blank pulses up to now
  *
- * @attention Requires linking to `pspdisplay` (PSPSDK), `pspdisplay_user` (Adrenaline stubs)  or `pspdisplay_driver` stubs to be available.
+ * @attention Requires linking to `pspdisplay` or `pspdisplay_driver` stubs to be available.
  */
 unsigned int sceDisplayGetVcount(void);
 
 /**
  * Wait for vertical blank start
  *
- * @attention Requires linking to `pspdisplay` (PSPSDK), `pspdisplay_user` (Adrenaline stubs)  or `pspdisplay_driver` stubs to be available.
+ * @attention Requires linking to `pspdisplay` or `pspdisplay_driver` stubs to be available.
  */
 int sceDisplayWaitVblankStart(void);
 
 /**
  * Wait for vertical blank start with callback
  *
- * @attention Requires linking to `pspdisplay` (PSPSDK), `pspdisplay_user` (Adrenaline stubs)  or `pspdisplay_driver` stubs to be available.
+ * @attention Requires linking to `pspdisplay` or `pspdisplay_driver` stubs to be available.
  */
 int sceDisplayWaitVblankStartCB(void);
 
 /**
  * Wait for vertical blank
  *
- * @attention Requires linking to `pspdisplay` (PSPSDK), `pspdisplay_user` (Adrenaline stubs)  or `pspdisplay_driver` stubs to be available.
+ * @attention Requires linking to `pspdisplay` or `pspdisplay_driver` stubs to be available.
  */
 int sceDisplayWaitVblank(void);
 
 /**
  * Wait for vertical blank with callback
  *
- * @attention Requires linking to `pspdisplay` (PSPSDK), `pspdisplay_user` (Adrenaline stubs)  or `pspdisplay_driver` stubs to be available.
+ * @attention Requires linking to `pspdisplay` or `pspdisplay_driver` stubs to be available.
  */
 int sceDisplayWaitVblankCB(void);
 
 /**
  * Get accumlated HSYNC count
  *
- * @attention Requires linking to `pspdisplay` (PSPSDK), `pspdisplay_user` (Adrenaline stubs)  or `pspdisplay_driver` stubs to be available.
+ * @attention Requires linking to `pspdisplay` or `pspdisplay_driver` stubs to be available.
  */
 int sceDisplayGetAccumulatedHcount(void);
 
 /**
  * Get current HSYNC count
  *
- * @attention Requires linking to `pspdisplay` (PSPSDK), `pspdisplay_user` (Adrenaline stubs)  or `pspdisplay_driver` stubs to be available.
+ * @attention Requires linking to `pspdisplay` or `pspdisplay_driver` stubs to be available.
  */
 int sceDisplayGetCurrentHcount(void);
 
 /**
  * Get number of frames per second
  *
- * @attention Requires linking to `pspdisplay` (PSPSDK), `pspdisplay_user` (Adrenaline stubs)  or `pspdisplay_driver` stubs to be available.
+ * @attention Requires linking to `pspdisplay` or `pspdisplay_driver` stubs to be available.
  */
 float sceDisplayGetFramePerSec(void);
 
 /**
  * Get whether or not frame buffer is being displayed
  *
- * @attention Requires linking to `pspdisplay` (PSPSDK), `pspdisplay_user` (Adrenaline stubs)  or `pspdisplay_driver` stubs to be available.
+ * @attention Requires linking to `pspdisplay` or `pspdisplay_driver` stubs to be available.
  */
 int sceDisplayIsForeground(void);
 
 /**
  * Test whether VBLANK is active
  *
- * @attention Requires linking to `pspdisplay` (PSPSDK), `pspdisplay_user` (Adrenaline stubs)  or `pspdisplay_driver` stubs to be available.
+ * @attention Requires linking to `pspdisplay` or `pspdisplay_driver` stubs to be available.
  */
 int sceDisplayIsVblank(void);
 

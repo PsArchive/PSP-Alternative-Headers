@@ -68,7 +68,7 @@ extern "C" {
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `pspreg` (PSPSDK), `pspreg_user` (Adrenaline stubs)  or `pspreg_driver` stubs to be available.
+ * @attention Requires linking to `pspreg` or `pspreg_driver` stubs to be available.
  */
 int sceRegOpenRegistry(SceRegParam *reg_param, int mode, RegisterHandle *handle);
 
@@ -79,7 +79,7 @@ int sceRegOpenRegistry(SceRegParam *reg_param, int mode, RegisterHandle *handle)
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `pspreg` (PSPSDK), `pspreg_user` (Adrenaline stubs)  or `pspreg_driver` stubs to be available.
+ * @attention Requires linking to `pspreg` or `pspreg_driver` stubs to be available.
  */
 int sceRegFlushRegistry(RegisterHandle handle);
 
@@ -90,7 +90,7 @@ int sceRegFlushRegistry(RegisterHandle handle);
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `pspreg` (PSPSDK), `pspreg_user` (Adrenaline stubs)  or `pspreg_driver` stubs to be available.
+ * @attention Requires linking to `pspreg` or `pspreg_driver` stubs to be available.
  */
 int sceRegCloseRegistry(RegisterHandle handle);
 
@@ -104,7 +104,7 @@ int sceRegCloseRegistry(RegisterHandle handle);
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `pspreg` (PSPSDK), `pspreg_user` (Adrenaline stubs)  or `pspreg_driver` stubs to be available.
+ * @attention Requires linking to `pspreg` or `pspreg_driver` stubs to be available.
  */
 int sceRegOpenCategory(RegisterHandle handle, const char *name, int mode, RegisterHandle *dir_handle);
 
@@ -116,7 +116,7 @@ int sceRegOpenCategory(RegisterHandle handle, const char *name, int mode, Regist
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `pspreg` (PSPSDK), `pspreg_user` (Adrenaline stubs)  or `pspreg_driver` stubs to be available.
+ * @attention Requires linking to `pspreg` or `pspreg_driver` stubs to be available.
  */
 int sceRegRemoveCategory(RegisterHandle dir_handle, const char *name);
 
@@ -127,7 +127,7 @@ int sceRegRemoveCategory(RegisterHandle dir_handle, const char *name);
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `pspreg` (PSPSDK), `pspreg_user` (Adrenaline stubs)  or `pspreg_driver` stubs to be available.
+ * @attention Requires linking to `pspreg` or `pspreg_driver` stubs to be available.
  */
 int sceRegCloseCategory(RegisterHandle dir_handle);
 
@@ -138,7 +138,7 @@ int sceRegCloseCategory(RegisterHandle dir_handle);
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `pspreg` (PSPSDK), `pspreg_user` (Adrenaline stubs)  or `pspreg_driver` stubs to be available.
+ * @attention Requires linking to `pspreg` or `pspreg_driver` stubs to be available.
  */
 int sceRegFlushCategory(RegisterHandle dir_handle);
 
@@ -153,7 +153,7 @@ int sceRegFlushCategory(RegisterHandle dir_handle);
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `pspreg` (PSPSDK), `pspreg_user` (Adrenaline stubs)  or `pspreg_driver` stubs to be available.
+ * @attention Requires linking to `pspreg` or `pspreg_driver` stubs to be available.
  */
 int sceRegGetKeyInfo(RegisterHandle dir_handle, const char *name, RegisterHandle *key_handle,u32 *type, SceSize *size);
 
@@ -167,7 +167,7 @@ int sceRegGetKeyInfo(RegisterHandle dir_handle, const char *name, RegisterHandle
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `pspreg` (PSPSDK), `pspreg_user` (Adrenaline stubs)  or `pspreg_driver` stubs to be available.
+ * @attention Requires linking to `pspreg` or `pspreg_driver` stubs to be available.
  */
 int sceRegGetKeyInfoByName(RegisterHandle dir_handle, const char *name, u32 *type, SceSize *size);
 
@@ -181,7 +181,7 @@ int sceRegGetKeyInfoByName(RegisterHandle dir_handle, const char *name, u32 *typ
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `pspreg` (PSPSDK), `pspreg_user` (Adrenaline stubs)  or `pspreg_driver` stubs to be available.
+ * @attention Requires linking to `pspreg` or `pspreg_driver` stubs to be available.
  */
 int sceRegGetKeyValue(RegisterHandle dir_handle, RegisterHandle key_handle, void *buf, SceSize size);
 
@@ -195,7 +195,7 @@ int sceRegGetKeyValue(RegisterHandle dir_handle, RegisterHandle key_handle, void
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `pspreg` (PSPSDK), `pspreg_user` (Adrenaline stubs)  or `pspreg_driver` stubs to be available.
+ * @attention Requires linking to `pspreg` or `pspreg_driver` stubs to be available.
  */
 int sceRegGetKeyValueByName(RegisterHandle dir_handle, const char *name, void *buf, SceSize size);
 
@@ -209,7 +209,7 @@ int sceRegGetKeyValueByName(RegisterHandle dir_handle, const char *name, void *b
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `pspreg` (PSPSDK), `pspreg_user` (Adrenaline stubs)  or `pspreg_driver` stubs to be available.
+ * @attention Requires linking to `pspreg` or `pspreg_driver` stubs to be available.
  */
 int sceRegSetKeyValue(RegisterHandle dir_handle, const char *name, const void *buf, SceSize size);
 
@@ -221,7 +221,7 @@ int sceRegSetKeyValue(RegisterHandle dir_handle, const char *name, const void *b
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `pspreg` (PSPSDK), `pspreg_user` (Adrenaline stubs)  or `pspreg_driver` stubs to be available.
+ * @attention Requires linking to `pspreg` or `pspreg_driver` stubs to be available.
  */
 int sceRegGetKeysNum(RegisterHandle dir_handle, int *num);
 
@@ -234,7 +234,7 @@ int sceRegGetKeysNum(RegisterHandle dir_handle, int *num);
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `pspreg` (PSPSDK), `pspreg_user` (Adrenaline stubs)  or `pspreg_driver` stubs to be available.
+ * @attention Requires linking to `pspreg` or `pspreg_driver` stubs to be available.
  */
 int sceRegGetKeys(RegisterHandle hd, char *buf, int num);
 
@@ -248,7 +248,7 @@ int sceRegGetKeys(RegisterHandle hd, char *buf, int num);
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `pspreg` (PSPSDK), `pspreg_user` (Adrenaline stubs)  or `pspreg_driver` stubs to be available.
+ * @attention Requires linking to `pspreg` or `pspreg_driver` stubs to be available.
  */
 int sceRegCreateKey(RegisterHandle dir_handle, const char *name, int type, SceSize size);
 
@@ -259,7 +259,7 @@ int sceRegCreateKey(RegisterHandle dir_handle, const char *name, int type, SceSi
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `pspreg` (PSPSDK), `pspreg_user` (Adrenaline stubs)  or `pspreg_driver` stubs to be available.
+ * @attention Requires linking to `pspreg` or `pspreg_driver` stubs to be available.
  */
 int sceRegRemoveRegistry(SceRegParam *reg);
 

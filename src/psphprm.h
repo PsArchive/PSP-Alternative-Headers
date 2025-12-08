@@ -49,7 +49,7 @@ extern "C" {
   *
   * @return `< 0` on error.
   *
-  * @attention Requires linking to `psphprm` (PSPSDK), `psphprm_user` (Adrenaline stubs)  or `psphprm_driver` stubs to be available.
+  * @attention Requires linking to `psphprm` or `psphprm_driver` stubs to be available.
   */
 int sceHprmPeekCurrentKey(u32 *key);
 
@@ -60,7 +60,7 @@ int sceHprmPeekCurrentKey(u32 *key);
   *
   * @return `< 0` on error.
   *
-  * @attention Requires linking to `psphprm` (PSPSDK), `psphprm_user` (Adrenaline stubs)  or `psphprm_driver` stubs to be available.
+  * @attention Requires linking to `psphprm` or `psphprm_driver` stubs to be available.
   */
 int sceHprmPeekLatch(u32 *latch);
 
@@ -71,7 +71,7 @@ int sceHprmPeekLatch(u32 *latch);
   *
   * @return `< 0` on error.
   *
-  * @attention Requires linking to `psphprm` (PSPSDK), `psphprm_user` (Adrenaline stubs)  or `psphprm_driver` stubs to be available.
+  * @attention Requires linking to `psphprm` or `psphprm_driver` stubs to be available.
   */
 int sceHprmReadLatch(u32 *latch);
 
@@ -80,7 +80,7 @@ int sceHprmReadLatch(u32 *latch);
   *
   * @return `1` if the headphones are plugged in, else `0`.
   *
-  * @attention Requires linking to `psphprm` (PSPSDK), `psphprm_user` (Adrenaline stubs)  or `psphprm_driver` stubs to be available.
+  * @attention Requires linking to `psphprm` or `psphprm_driver` stubs to be available.
   */
 int sceHprmIsHeadphoneExist(void);
 
@@ -89,7 +89,7 @@ int sceHprmIsHeadphoneExist(void);
   *
   * @return `1` if the remote is plugged in, else `0`.
   *
-  * @attention Requires linking to `psphprm` (PSPSDK), `psphprm_user` (Adrenaline stubs)  or `psphprm_driver` stubs to be available.
+  * @attention Requires linking to `psphprm` or `psphprm_driver` stubs to be available.
   */
 int sceHprmIsRemoteExist(void);
 
@@ -98,7 +98,7 @@ int sceHprmIsRemoteExist(void);
   *
   * @return `1` if the microphone is plugged in, else `0`.
   *
-  * @attention Requires linking to `psphprm` (PSPSDK), `psphprm_user` (Adrenaline stubs)  or `psphprm_driver` stubs to be available.
+  * @attention Requires linking to `psphprm` or `psphprm_driver` stubs to be available.
   */
 int sceHprmIsMicrophoneExist(void);
 

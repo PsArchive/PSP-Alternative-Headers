@@ -28,7 +28,7 @@ extern "C" {
  *
  * @return `0` on success; otherwise an error code
  *
- * @attention Requires linking to `pspdmac` (PSPSDK) or `pspdmac_user` (Adrenaline stubs) stubs to be available.
+ * @attention Requires linking to `pspdmac` stub to be available.
  */
 int sceDmacMemcpy(void *dst, const void *src, SceSize size);
 
@@ -41,7 +41,7 @@ int sceDmacMemcpy(void *dst, const void *src, SceSize size);
  *
  * @return `0` on success; otherwise an error code
  *
- * @attention Requires linking to `pspdmac` (PSPSDK) or `pspdmac_user` (Adrenaline stubs) stubs to be available.
+ * @attention Requires linking to `pspdmac` stub to be available.
  */
 int sceDmacTryMemcpy(void *dst, const void *src, SceSize size);
 

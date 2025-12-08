@@ -37,7 +37,7 @@ extern "C" {
  *
  * @return The number of ticks per second.
  *
- * @attention Requires linking to `psprtc` (PSPSDK), `psprtc_user` (Adrenaline stubs)  or `psprtc_driver` stubs to be available.
+ * @attention Requires linking to `psprtc` or `psprtc_driver` stubs to be available.
  */
 u32 sceRtcGetTickResolution();
 
@@ -48,7 +48,7 @@ u32 sceRtcGetTickResolution();
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `psprtc` (PSPSDK), `psprtc_user` (Adrenaline stubs)  or `psprtc_driver` stubs to be available.
+ * @attention Requires linking to `psprtc` or `psprtc_driver` stubs to be available.
  */
 int sceRtcGetCurrentTick(u64 *tick_count);
 
@@ -60,7 +60,7 @@ int sceRtcGetCurrentTick(u64 *tick_count);
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `psprtc` (PSPSDK), `psprtc_user` (Adrenaline stubs)  or `psprtc_driver` stubs to be available.
+ * @attention Requires linking to `psprtc` or `psprtc_driver` stubs to be available.
  */
 int sceRtcGetCurrentClock(ScePspDateTime *time, int tz);
 
@@ -71,7 +71,7 @@ int sceRtcGetCurrentClock(ScePspDateTime *time, int tz);
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `psprtc` (PSPSDK), `psprtc_user` (Adrenaline stubs)  or `psprtc_driver` stubs to be available.
+ * @attention Requires linking to `psprtc` or `psprtc_driver` stubs to be available.
  */
 int sceRtcGetCurrentClockLocalTime(ScePspDateTime *time);
 
@@ -83,7 +83,7 @@ int sceRtcGetCurrentClockLocalTime(ScePspDateTime *time);
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `psprtc` (PSPSDK), `psprtc_user` (Adrenaline stubs)  or `psprtc_driver` stubs to be available.
+ * @attention Requires linking to `psprtc` or `psprtc_driver` stubs to be available.
  */
 int sceRtcConvertUtcToLocalTime(const u64* utc_tick, u64* local_tick);
 
@@ -95,7 +95,7 @@ int sceRtcConvertUtcToLocalTime(const u64* utc_tick, u64* local_tick);
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `psprtc` (PSPSDK), `psprtc_user` (Adrenaline stubs)  or `psprtc_driver` stubs to be available.
+ * @attention Requires linking to `psprtc` or `psprtc_driver` stubs to be available.
  */
 int sceRtcConvertLocalTimeToUTC(const u64* local_tick, u64* utc_tick);
 
@@ -106,7 +106,7 @@ int sceRtcConvertLocalTimeToUTC(const u64* local_tick, u64* utc_tick);
  *
  * @return `1` on leapyear, `0` if not
  *
- * @attention Requires linking to `psprtc` (PSPSDK), `psprtc_user` (Adrenaline stubs)  or `psprtc_driver` stubs to be available.
+ * @attention Requires linking to `psprtc` or `psprtc_driver` stubs to be available.
  */
 int sceRtcIsLeapYear(int year);
 
@@ -118,7 +118,7 @@ int sceRtcIsLeapYear(int year);
  *
  * @return The number of days in month, `< 0` on error (?).
  *
- * @attention Requires linking to `psprtc` (PSPSDK), `psprtc_user` (Adrenaline stubs)  or `psprtc_driver` stubs to be available.
+ * @attention Requires linking to `psprtc` or `psprtc_driver` stubs to be available.
  */
 int sceRtcGetDaysInMonth(int year, int month);
 
@@ -131,7 +131,7 @@ int sceRtcGetDaysInMonth(int year, int month);
  *
  * @return The day of week with `0` representing Monday.
  *
- * @attention Requires linking to `psprtc` (PSPSDK), `psprtc_user` (Adrenaline stubs)  or `psprtc_driver` stubs to be available.
+ * @attention Requires linking to `psprtc` or `psprtc_driver` stubs to be available.
  */
 int sceRtcGetDayOfWeek(int year, int month, int day);
 
@@ -142,7 +142,7 @@ int sceRtcGetDayOfWeek(int year, int month, int day);
  *
  * @return `0` on success, one of `SceRtcCheckValidErrors` on error.
  *
- * @attention Requires linking to `psprtc` (PSPSDK), `psprtc_user` (Adrenaline stubs)  or `psprtc_driver` stubs to be available.
+ * @attention Requires linking to `psprtc` or `psprtc_driver` stubs to be available.
  */
 int sceRtcCheckValid(const ScePspDateTime* date);
 
@@ -154,7 +154,7 @@ int sceRtcCheckValid(const ScePspDateTime* date);
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `psprtc` (PSPSDK), `psprtc_user` (Adrenaline stubs)  or `psprtc_driver` stubs to be available.
+ * @attention Requires linking to `psprtc` or `psprtc_driver` stubs to be available.
  */
 int sceRtcSetTick(ScePspDateTime* date, const u64* tick);
 
@@ -166,7 +166,7 @@ int sceRtcSetTick(ScePspDateTime* date, const u64* tick);
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `psprtc` (PSPSDK), `psprtc_user` (Adrenaline stubs)  or `psprtc_driver` stubs to be available.
+ * @attention Requires linking to `psprtc` or `psprtc_driver` stubs to be available.
  */
 int sceRtcGetTick(const ScePspDateTime* date, u64 *tick);
 
@@ -178,7 +178,7 @@ int sceRtcGetTick(const ScePspDateTime* date, u64 *tick);
  *
  * @return `0` on equal, `< 0` when `tick1 < tick2`, `> 0` when `tick1 > tick2`.
  *
- * @attention Requires linking to `psprtc` (PSPSDK), `psprtc_user` (Adrenaline stubs)  or `psprtc_driver` stubs to be available.
+ * @attention Requires linking to `psprtc` or `psprtc_driver` stubs to be available.
  */
 int sceRtcCompareTick(const u64* tick1, const u64* tick2);
 
@@ -191,7 +191,7 @@ int sceRtcCompareTick(const u64* tick1, const u64* tick2);
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `psprtc` (PSPSDK), `psprtc_user` (Adrenaline stubs)  or `psprtc_driver` stubs to be available.
+ * @attention Requires linking to `psprtc` or `psprtc_driver` stubs to be available.
  */
 int sceRtcTickAddTicks(u64* dest_tick, const u64* src_tick, u64 num_ticks);
 
@@ -204,7 +204,7 @@ int sceRtcTickAddTicks(u64* dest_tick, const u64* src_tick, u64 num_ticks);
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `psprtc` (PSPSDK), `psprtc_user` (Adrenaline stubs)  or `psprtc_driver` stubs to be available.
+ * @attention Requires linking to `psprtc` or `psprtc_driver` stubs to be available.
  */
 int sceRtcTickAddMicroseconds(u64* dest_tick, const u64* src_tick, u64 num_ms);
 
@@ -217,7 +217,7 @@ int sceRtcTickAddMicroseconds(u64* dest_tick, const u64* src_tick, u64 num_ms);
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `psprtc` (PSPSDK), `psprtc_user` (Adrenaline stubs)  or `psprtc_driver` stubs to be available.
+ * @attention Requires linking to `psprtc` or `psprtc_driver` stubs to be available.
  */
 int sceRtcTickAddSeconds(u64* dest_tick, const u64* src_tick, u64 num_secs);
 
@@ -230,7 +230,7 @@ int sceRtcTickAddSeconds(u64* dest_tick, const u64* src_tick, u64 num_secs);
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `psprtc` (PSPSDK), `psprtc_user` (Adrenaline stubs)  or `psprtc_driver` stubs to be available.
+ * @attention Requires linking to `psprtc` or `psprtc_driver` stubs to be available.
  */
 int sceRtcTickAddMinutes(u64* dest_tick, const u64* src_tick, u64 num_mins);
 
@@ -243,7 +243,7 @@ int sceRtcTickAddMinutes(u64* dest_tick, const u64* src_tick, u64 num_mins);
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `psprtc` (PSPSDK), `psprtc_user` (Adrenaline stubs)  or `psprtc_driver` stubs to be available.
+ * @attention Requires linking to `psprtc` or `psprtc_driver` stubs to be available.
  */
 int sceRtcTickAddHours(u64* dest_tick, const u64* src_tick, int num_hours);
 
@@ -256,7 +256,7 @@ int sceRtcTickAddHours(u64* dest_tick, const u64* src_tick, int num_hours);
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `psprtc` (PSPSDK), `psprtc_user` (Adrenaline stubs)  or `psprtc_driver` stubs to be available.
+ * @attention Requires linking to `psprtc` or `psprtc_driver` stubs to be available.
  */
 int sceRtcTickAddDays(u64* dest_tick, const u64* src_tick, int num_days);
 
@@ -269,7 +269,7 @@ int sceRtcTickAddDays(u64* dest_tick, const u64* src_tick, int num_days);
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `psprtc` (PSPSDK), `psprtc_user` (Adrenaline stubs)  or `psprtc_driver` stubs to be available.
+ * @attention Requires linking to `psprtc` or `psprtc_driver` stubs to be available.
  */
 int sceRtcTickAddWeeks(u64* dest_tick, const u64* src_tick, int num_weeks);
 
@@ -283,7 +283,7 @@ int sceRtcTickAddWeeks(u64* dest_tick, const u64* src_tick, int num_weeks);
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `psprtc` (PSPSDK), `psprtc_user` (Adrenaline stubs)  or `psprtc_driver` stubs to be available.
+ * @attention Requires linking to `psprtc` or `psprtc_driver` stubs to be available.
  */
 int sceRtcTickAddMonths(u64* dest_tick, const u64* src_tick, int num_months);
 
@@ -296,24 +296,24 @@ int sceRtcTickAddMonths(u64* dest_tick, const u64* src_tick, int num_months);
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `psprtc` (PSPSDK), `psprtc_user` (Adrenaline stubs)  or `psprtc_driver` stubs to be available.
+ * @attention Requires linking to `psprtc` or `psprtc_driver` stubs to be available.
  */
 int sceRtcTickAddYears(u64* dest_tick, const u64* src_tick, int numYears);
 
-/** @attention Requires linking to `psprtc` (PSPSDK), `psprtc_user` (Adrenaline stubs)  or `psprtc_driver` stubs to be available. */
+/** @attention Requires linking to `psprtc` or `psprtc_driver` stubs to be available. */
 int sceRtcSetTime_t(ScePspDateTime* date, const time_t time);
-/** @attention Requires linking to `psprtc` (PSPSDK), `psprtc_user` (Adrenaline stubs)  or `psprtc_driver` stubs to be available. */
+/** @attention Requires linking to `psprtc` or `psprtc_driver` stubs to be available. */
 int sceRtcGetTime_t(const ScePspDateTime* date, time_t *time);
-/** @attention Requires linking to `psprtc` (PSPSDK), `psprtc_user` (Adrenaline stubs)  or `psprtc_driver` stubs to be available. */
+/** @attention Requires linking to `psprtc` or `psprtc_driver` stubs to be available. */
 int sceRtcSetDosTime(ScePspDateTime* date, u32 dosTime);
-/** @attention Requires linking to `psprtc` (PSPSDK), `psprtc_user` (Adrenaline stubs)  or `psprtc_driver` stubs to be available. */
+/** @attention Requires linking to `psprtc` or `psprtc_driver` stubs to be available. */
 int sceRtcGetDosTime(ScePspDateTime* date, u32 dosTime);
-/** @attention Requires linking to `psprtc` (PSPSDK), `psprtc_user` (Adrenaline stubs)  or `psprtc_driver` stubs to be available. */
+/** @attention Requires linking to `psprtc` or `psprtc_driver` stubs to be available. */
 int sceRtcSetWin32FileTime(ScePspDateTime* date, u64* win32Time);
-/** @attention Requires linking to `psprtc` (PSPSDK), `psprtc_user` (Adrenaline stubs)  or `psprtc_driver` stubs to be available. */
+/** @attention Requires linking to `psprtc` or `psprtc_driver` stubs to be available. */
 int sceRtcGetWin32FileTime(ScePspDateTime* date, u64* win32Time);
 
-/** @attention Requires linking to `psprtc` (PSPSDK), `psprtc_user` (Adrenaline stubs)  or `psprtc_driver` stubs to be available. */
+/** @attention Requires linking to `psprtc` or `psprtc_driver` stubs to be available. */
 int sceRtcParseDateTime(u64 *dest_tick, const char *dateString);
 
 /**
@@ -325,7 +325,7 @@ int sceRtcParseDateTime(u64 *dest_tick, const char *dateString);
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `psprtc` (PSPSDK), `psprtc_user` (Adrenaline stubs)  or `psprtc_driver` stubs to be available.
+ * @attention Requires linking to `psprtc` or `psprtc_driver` stubs to be available.
  */
 int sceRtcFormatRFC2822(char *datetime_fmt, const u64 *utc_tick, int timezone_minutes);
 
@@ -337,7 +337,7 @@ int sceRtcFormatRFC2822(char *datetime_fmt, const u64 *utc_tick, int timezone_mi
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `psprtc` (PSPSDK), `psprtc_user` (Adrenaline stubs)  or `psprtc_driver` stubs to be available.
+ * @attention Requires linking to `psprtc` or `psprtc_driver` stubs to be available.
  */
 int sceRtcFormatRFC2822LocalTime(char *datetime_fmt, const u64 *local_tick);
 
@@ -350,7 +350,7 @@ int sceRtcFormatRFC2822LocalTime(char *datetime_fmt, const u64 *local_tick);
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `psprtc` (PSPSDK), `psprtc_user` (Adrenaline stubs)  or `psprtc_driver` stubs to be available.
+ * @attention Requires linking to `psprtc` or `psprtc_driver` stubs to be available.
  */
 int sceRtcFormatRFC3339(char *datetime_fmt, const u64 *utc_tick, int timezone_minutes);
 
@@ -362,7 +362,7 @@ int sceRtcFormatRFC3339(char *datetime_fmt, const u64 *utc_tick, int timezone_mi
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `psprtc` (PSPSDK), `psprtc_user` (Adrenaline stubs)  or `psprtc_driver` stubs to be available.
+ * @attention Requires linking to `psprtc` or `psprtc_driver` stubs to be available.
  */
 int sceRtcFormatRFC3339LocalTime(char *datetime_fmt, const u64 *local_tick);
 
@@ -374,7 +374,7 @@ int sceRtcFormatRFC3339LocalTime(char *datetime_fmt, const u64 *local_tick);
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `psprtc` (PSPSDK), `psprtc_user` (Adrenaline stubs)  or `psprtc_driver` stubs to be available.
+ * @attention Requires linking to `psprtc` or `psprtc_driver` stubs to be available.
  */
 int sceRtcParseRFC3339(u64 *tick, const char *datetime_fmt);
 

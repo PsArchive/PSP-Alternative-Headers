@@ -87,10 +87,6 @@ typedef enum ScePowerTickFlags {
 
 #define SCE_POWER_SLOT_AUTO (-1)
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 /**
  * Power Callback Function Definition.
  *
@@ -98,6 +94,10 @@ extern "C" {
  * @param power_info A combination of `ScePowerCallbackFlags` flags
  */
 typedef void (*powerCallback_t)(int unknown, int power_info);
+
+#ifdef __cplusplus
+extern "C" {
+#endif // __cplusplus
 
 /**
  * Register Power Callback Function.
@@ -107,7 +107,7 @@ typedef void (*powerCallback_t)(int unknown, int power_info);
  *
  * @return `0` on success, the slot number if `SCE_POWER_SLOT_AUTO` is passed, `< 0` on error.
  *
- * @attention Requires linking to `psppower` (PSPSDK), `psppower_user` (Adrenaline stubs)  or `psppower_driver` stubs to be available.
+ * @attention Requires linking to `psppower` or `psppower_driver` stubs to be available.
  */
 int scePowerRegisterCallback(int slot, SceUID cb_id);
 
@@ -118,7 +118,7 @@ int scePowerRegisterCallback(int slot, SceUID cb_id);
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `psppower` (PSPSDK), `psppower_user` (Adrenaline stubs)  or `psppower_driver` stubs to be available.
+ * @attention Requires linking to `psppower` or `psppower_driver` stubs to be available.
  */
 int scePowerUnregisterCallback(int slot);
 
@@ -127,7 +127,7 @@ int scePowerUnregisterCallback(int slot);
  *
  * @return `1` if plugged in, `0` if not plugged in, `< 0` on error.
  *
- * @attention Requires linking to `psppower` (PSPSDK), `psppower_user` (Adrenaline stubs)  or `psppower_driver` stubs to be available.
+ * @attention Requires linking to `psppower` or `psppower_driver` stubs to be available.
  */
 int scePowerIsPowerOnline(void);
 
@@ -136,7 +136,7 @@ int scePowerIsPowerOnline(void);
  *
  * @return `1` if battery present, `0` if battery not present, `< 0` on error.
  *
- * @attention Requires linking to `psppower` (PSPSDK), `psppower_user` (Adrenaline stubs)  or `psppower_driver` stubs to be available.
+ * @attention Requires linking to `psppower` or `psppower_driver` stubs to be available.
  */
 int scePowerIsBatteryExist(void);
 
@@ -145,7 +145,7 @@ int scePowerIsBatteryExist(void);
  *
  * @return `1` if battery charging, `0` if battery not charging, `< 0` on error.
  *
- * @attention Requires linking to `psppower` (PSPSDK), `psppower_user` (Adrenaline stubs)  or `psppower_driver` stubs to be available.
+ * @attention Requires linking to `psppower` or `psppower_driver` stubs to be available.
  */
 int scePowerIsBatteryCharging(void);
 
@@ -154,7 +154,7 @@ int scePowerIsBatteryCharging(void);
  *
  * @return The battery charging status, `< 0` on error.
  *
- * @attention Requires linking to `psppower` (PSPSDK), `psppower_user` (Adrenaline stubs)  or `psppower_driver` stubs to be available.
+ * @attention Requires linking to `psppower` or `psppower_driver` stubs to be available.
  */
 int scePowerGetBatteryChargingStatus(void);
 
@@ -163,7 +163,7 @@ int scePowerGetBatteryChargingStatus(void);
  *
  * @return `1` if the battery is low, `0` if the battery is not low, `< 0` on error.
  *
- * @attention Requires linking to `psppower` (PSPSDK), `psppower_user` (Adrenaline stubs)  or `psppower_driver` stubs to be available.
+ * @attention Requires linking to `psppower` or `psppower_driver` stubs to be available.
  */
 int scePowerIsLowBattery(void);
 
@@ -172,7 +172,7 @@ int scePowerIsLowBattery(void);
  *
  * @return `1` if suspend is required, `0` otherwise.
  *
- * @attention Requires linking to `psppower` (PSPSDK), `psppower_user` (Adrenaline stubs)  or `psppower_driver` stubs to be available.
+ * @attention Requires linking to `psppower` or `psppower_driver` stubs to be available.
  */
 int scePowerIsSuspendRequired(void);
 
@@ -181,7 +181,7 @@ int scePowerIsSuspendRequired(void);
  *
  * @return The battery remaining capacity in mAh (milliampere hour)
  *
- * @attention Requires linking to `psppower` (PSPSDK), `psppower_user` (Adrenaline stubs)  or `psppower_driver` stubs to be available.
+ * @attention Requires linking to `psppower` or `psppower_driver` stubs to be available.
  */
 int scePowerGetBatteryRemainCapacity(void);
 
@@ -190,7 +190,7 @@ int scePowerGetBatteryRemainCapacity(void);
  *
  * @return The battery full capacity in mAh (milliampere hour)
  *
- * @attention Requires linking to `psppower` (PSPSDK), `psppower_user` (Adrenaline stubs)  or `psppower_driver` stubs to be available.
+ * @attention Requires linking to `psppower` or `psppower_driver` stubs to be available.
  */
 int scePowerGetBatteryFullCapacity(void);
 
@@ -199,7 +199,7 @@ int scePowerGetBatteryFullCapacity(void);
  *
  * @return The battery charge percentage (`0`-`100`), `< 0` on error.
  *
- * @attention Requires linking to `psppower` (PSPSDK), `psppower_user` (Adrenaline stubs)  or `psppower_driver` stubs to be available.
+ * @attention Requires linking to `psppower` or `psppower_driver` stubs to be available.
  */
 int scePowerGetBatteryLifePercent(void);
 
@@ -208,7 +208,7 @@ int scePowerGetBatteryLifePercent(void);
  *
  * @return The battery life in minutes, `< 0` on error.
  *
- * @attention Requires linking to `psppower` (PSPSDK), `psppower_user` (Adrenaline stubs)  or `psppower_driver` stubs to be available.
+ * @attention Requires linking to `psppower` or `psppower_driver` stubs to be available.
  */
 int scePowerGetBatteryLifeTime(void);
 
@@ -217,14 +217,14 @@ int scePowerGetBatteryLifeTime(void);
  *
  * @return The battery temperature, `< 0` on error.
  *
- * @attention Requires linking to `psppower` (PSPSDK), `psppower_user` (Adrenaline stubs)  or `psppower_driver` stubs to be available.
+ * @attention Requires linking to `psppower` or `psppower_driver` stubs to be available.
  */
 int scePowerGetBatteryTemp(void);
 
 /**
  * unknown? - crashes PSP in usermode
  *
- * @attention Requires linking to `psppower` (PSPSDK), `psppower_user` (Adrenaline stubs)  or `psppower_driver` stubs to be available.
+ * @attention Requires linking to `psppower` or `psppower_driver` stubs to be available.
  */
 int scePowerGetBatteryElec(void);
 
@@ -233,7 +233,7 @@ int scePowerGetBatteryElec(void);
  *
  * @return The battery volt level, `< 0` on error.
  *
- * @attention Requires linking to `psppower` (PSPSDK), `psppower_user` (Adrenaline stubs)  or `psppower_driver` stubs to be available.
+ * @attention Requires linking to `psppower` or `psppower_driver` stubs to be available.
  */
 int scePowerGetBatteryVolt(void);
 
@@ -244,7 +244,7 @@ int scePowerGetBatteryVolt(void);
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `psppower` (PSPSDK), `psppower_user` (Adrenaline stubs)  or `psppower_driver` stubs to be available.
+ * @attention Requires linking to `psppower` or `psppower_driver` stubs to be available.
  */
 int scePowerSetCpuClockFrequency(int cpu_freq);
 
@@ -255,7 +255,7 @@ int scePowerSetCpuClockFrequency(int cpu_freq);
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `psppower` (PSPSDK), `psppower_user` (Adrenaline stubs)  or `psppower_driver` stubs to be available.
+ * @attention Requires linking to `psppower` or `psppower_driver` stubs to be available.
  */
 int scePowerSetBusClockFrequency(int bus_freq);
 
@@ -264,7 +264,7 @@ int scePowerSetBusClockFrequency(int bus_freq);
  *
  * @return The CPU frequency as integer.
  *
- * @attention Requires linking to `psppower` (PSPSDK), `psppower_user` (Adrenaline stubs)  or `psppower_driver` stubs to be available.
+ * @attention Requires linking to `psppower` or `psppower_driver` stubs to be available.
  */
 int scePowerGetCpuClockFrequencyInt(void);
 
@@ -273,7 +273,7 @@ int scePowerGetCpuClockFrequencyInt(void);
  *
  * @return The CPU frequency as float point.
  *
- * @attention Requires linking to `psppower` (PSPSDK), `psppower_user` (Adrenaline stubs)  or `psppower_driver` stubs to be available.
+ * @attention Requires linking to `psppower` or `psppower_driver` stubs to be available.
  */
 float scePowerGetCpuClockFrequencyFloat(void);
 
@@ -282,7 +282,7 @@ float scePowerGetCpuClockFrequencyFloat(void);
  *
  * @return The BUS frequency as integer.
  *
- * @attention Requires linking to `psppower` (PSPSDK), `psppower_user` (Adrenaline stubs)  or `psppower_driver` stubs to be available.
+ * @attention Requires linking to `psppower` or `psppower_driver` stubs to be available.
  */
 int scePowerGetBusClockFrequencyInt(void);
 
@@ -291,7 +291,7 @@ int scePowerGetBusClockFrequencyInt(void);
  *
  * @return The BUS frequency as float.
  *
- * @attention Requires linking to `psppower` (PSPSDK), `psppower_user` (Adrenaline stubs)  or `psppower_driver` stubs to be available.
+ * @attention Requires linking to `psppower` or `psppower_driver` stubs to be available.
  */
 float scePowerGetBusClockFrequencyFloat(void);
 
@@ -309,7 +309,7 @@ float scePowerGetBusClockFrequencyFloat(void);
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `psppower` (PSPSDK), `psppower_user` (Adrenaline stubs)  or `psppower_driver` stubs to be available.
+ * @attention Requires linking to `psppower` or `psppower_driver` stubs to be available.
  */
 int scePowerSetClockFrequency(int pll_freq, int cpu_freq, int busfreq);
 
@@ -323,7 +323,7 @@ int scePowerSetClockFrequency(int pll_freq, int cpu_freq, int busfreq);
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `psppower` (PSPSDK), `psppower_user` (Adrenaline stubs)  or `psppower_driver` stubs to be available.
+ * @attention Requires linking to `psppower` or `psppower_driver` stubs to be available.
  */
 int scePowerLock(int unk);
 
@@ -334,7 +334,7 @@ int scePowerLock(int unk);
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `psppower` (PSPSDK), `psppower_user` (Adrenaline stubs)  or `psppower_driver` stubs to be available.
+ * @attention Requires linking to `psppower` or `psppower_driver` stubs to be available.
  */
 int scePowerUnlock(int unk);
 
@@ -345,7 +345,7 @@ int scePowerUnlock(int unk);
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `psppower` (PSPSDK), `psppower_user` (Adrenaline stubs)  or `psppower_driver` stubs to be available.
+ * @attention Requires linking to `psppower` or `psppower_driver` stubs to be available.
  */
 int scePowerTick(int type);
 
@@ -354,7 +354,7 @@ int scePowerTick(int type);
  *
  * @return The idle timer, `< 0` on error.
  *
- * @attention Requires linking to `psppower` (PSPSDK), `psppower_user` (Adrenaline stubs)  or `psppower_driver` stubs to be available.
+ * @attention Requires linking to `psppower` or `psppower_driver` stubs to be available.
  */
 int scePowerGetIdleTimer(void);
 
@@ -365,7 +365,7 @@ int scePowerGetIdleTimer(void);
  *
  * @return `< 0` on error.
  *
- * @attention Requires linking to `psppower` (PSPSDK), `psppower_user` (Adrenaline stubs)  or `psppower_driver` stubs to be available.
+ * @attention Requires linking to `psppower` or `psppower_driver` stubs to be available.
  */
 int scePowerIdleTimerEnable(int unk);
 
@@ -376,7 +376,7 @@ int scePowerIdleTimerEnable(int unk);
  *
  * @return `< 0` on error.
  *
- * @attention Requires linking to `psppower` (PSPSDK), `psppower_user` (Adrenaline stubs)  or `psppower_driver` stubs to be available.
+ * @attention Requires linking to `psppower` or `psppower_driver` stubs to be available.
  */
 int scePowerIdleTimerDisable(int unk);
 
@@ -385,7 +385,7 @@ int scePowerIdleTimerDisable(int unk);
  *
  * @return `0` always.
  *
- * @attention Requires linking to `psppower` (PSPSDK), `psppower_user` (Adrenaline stubs)  or `psppower_driver` stubs to be available.
+ * @attention Requires linking to `psppower` or `psppower_driver` stubs to be available.
  */
 int scePowerRequestStandby(void);
 
@@ -394,7 +394,7 @@ int scePowerRequestStandby(void);
  *
  * @return `0` always.
  *
- * @attention Requires linking to `psppower` (PSPSDK), `psppower_user` (Adrenaline stubs)  or `psppower_driver` stubs to be available.
+ * @attention Requires linking to `psppower` or `psppower_driver` stubs to be available.
  */
 int scePowerRequestSuspend(void);
 
@@ -405,7 +405,7 @@ int scePowerRequestSuspend(void);
  *
  * @return `< 0` on error.
  *
- * @attention Requires linking to `psppower` (PSPSDK), `psppower_user` (Adrenaline stubs)  or `psppower_driver` stubs to be available.
+ * @attention Requires linking to `psppower` or `psppower_driver` stubs to be available.
  */
 int scePowerRequestColdReset(int a0);
 
@@ -415,7 +415,7 @@ int scePowerRequestColdReset(int a0);
  *
  * @return The BUS frequency as integer.
  *
- * @attention Requires linking to `psppower` (PSPSDK) or `psppower_user` (Adrenaline stubs) stubs to be available.
+ * @attention Requires linking to `psppower` stub to be available.
  */
 int scePowerGetBusClockFrequency(void);
 
@@ -424,7 +424,7 @@ int scePowerGetBusClockFrequency(void);
  *
  * @return The CPU frequency as integer.
  *
- * @attention Requires linking to `psppower` (PSPSDK) or `psppower_user` (Adrenaline stubs) stubs to be available.
+ * @attention Requires linking to `psppower` stub to be available.
  */
 int scePowerGetCpuClockFrequency(void);
 
