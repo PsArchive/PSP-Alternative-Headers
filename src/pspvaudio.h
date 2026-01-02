@@ -22,7 +22,7 @@
 #define PSP_VAUDIO_SAMPLE_MIN       256
 
 
-enum SceVaudioFormat {
+typedef enum SceVaudioFormat {
 	/** Channel is set to mono output. */
 	SCE_VAUDIO_FORMAT_MONO = 1,
 	/** Channel is set to stereo output. */
@@ -32,10 +32,10 @@ enum SceVaudioFormat {
 	PSP_VAUDIO_FORMAT_MONO = SCE_VAUDIO_FORMAT_MONO,
 	/** Channel is set to stereo output. */
 	PSP_VAUDIO_FORMAT_STEREO = SCE_VAUDIO_FORMAT_STEREO,
-};
+} SceVaudioFormat;
 
 /** Effect type  */
-enum SceEffectType {
+typedef enum SceEffectType {
 	SCE_VAUDIO_EFFECT_OFF = 0,
 	SCE_VAUDIO_EFFECT_HEAVY = 1,
 	SCE_VAUDIO_EFFECT_POPS = 2,
@@ -49,10 +49,10 @@ enum SceEffectType {
 	PSP_VAUDIO_EFFECT_JAZZ = SCE_VAUDIO_EFFECT_JAZZ,
 	PSP_VAUDIO_EFFECT_UNIQUE = SCE_VAUDIO_EFFECT_UNIQUE,
 	PSP_VAUDIO_EFFECT_MAX = SCE_VAUDIO_EFFECT_MAX,
-};
+} SceEffectType;
 
 /** Alc mode  */
-enum SceAlcMode {
+typedef enum SceAlcMode {
 	SCE_VAUDIO_ALC_OFF = 0,
 	SCE_VAUDIO_ALC_MODE1 = 1,
 	SCE_VAUDIO_ALC_MODE_MAX = 2,
@@ -60,7 +60,7 @@ enum SceAlcMode {
 	PSP_VAUDIO_ALC_OFF = SCE_VAUDIO_ALC_OFF,
 	PSP_VAUDIO_ALC_MODE1 = SCE_VAUDIO_ALC_MODE1,
 	PSP_VAUDIO_ALC_MODE_MAX = SCE_VAUDIO_ALC_MODE_MAX,
-};
+} SceAlcMode;
 
 
 #ifdef __cplusplus

@@ -16,7 +16,6 @@
 
 #include <psptypes.h>
 
-
 typedef struct SceMpegLLI {
 	void * src;
 	void * dst;

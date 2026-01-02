@@ -17,7 +17,7 @@
 #define __DISPLAYKERNEL_H__
 
 /** Framebuffer pixel formats. */
-enum SceDisplayPixelFormats {
+typedef enum SceDisplayPixelFormats {
 	/** 16-bit RGB 5:6:5. */
 	SCE_DISPLAY_PIXEL_FORMAT_565 = 0,
 	/** 16-bit RGBA 5:5:5:1. */
@@ -35,9 +35,9 @@ enum SceDisplayPixelFormats {
 	PSP_DISPLAY_PIXEL_FORMAT_4444 = SCE_DISPLAY_PIXEL_FORMAT_4444,
 	/* 32-bit RGBA 8:8:8:8. */
 	PSP_DISPLAY_PIXEL_FORMAT_8888 = SCE_DISPLAY_PIXEL_FORMAT_8888,
-};
+} SceDisplayPixelFormats;
 
-enum SceDisplaySetBufSync {
+typedef enum SceDisplaySetBufSync {
 	/** Buffer change effective next hsync */
 	SCE_DISPLAY_SETBUF_NEXTHSYNC = 0,
 	/** Buffer change effective next vsync */
@@ -47,13 +47,13 @@ enum SceDisplaySetBufSync {
 	PSP_DISPLAY_SETBUF_NEXTHSYNC = SCE_DISPLAY_SETBUF_NEXTHSYNC,
 	/** Buffer change effective next vsync */
 	PSP_DISPLAY_SETBUF_NEXTVSYNC = SCE_DISPLAY_SETBUF_NEXTVSYNC,
-};
+} SceDisplaySetBufSync;
 
 /** Values for retro compatibility */
 #define PSP_DISPLAY_SETBUF_IMMEDIATE PSP_DISPLAY_SETBUF_NEXTHSYNC
 #define PSP_DISPLAY_SETBUF_NEXTFRAME PSP_DISPLAY_SETBUF_NEXTVSYNC
 
-enum SceDisplayMode {
+typedef enum SceDisplayMode {
 	/** LCD MAX 480x272 at 59.94005995 Hz */
 	SCE_DISPLAY_MODE_LCD = 0,
 	/** VESA VGA MAX 640x480 at 59.94047618Hz */
@@ -67,7 +67,7 @@ enum SceDisplayMode {
 	PSP_DISPLAY_MODE_VESA1A = SCE_DISPLAY_MODE_VESA1A,
 	/** PSEUDO VGA MAX 640x480 at 59.94005995Hz*/
 	PSP_DISPLAY_MODE_PSEUDO_VGA = SCE_DISPLAY_MODE_PSEUDO_VGA,
-};
+} SceDisplayMode;
 
 enum PspDisplayErrorCodes {
 	SCE_DISPLAY_ERROR_OK = 0,

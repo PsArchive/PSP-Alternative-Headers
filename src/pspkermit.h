@@ -23,7 +23,7 @@
 #define ALIGN_64(x) ((x) & -64)
 #define KERMIT_CALLBACK_DISABLE 0
 
-enum KermitModes {
+typedef enum KermitModes {
     KERMIT_MODE_NONE,
     KERMIT_MODE_UNK_1,
     KERMIT_MODE_UNK_2,
@@ -40,10 +40,10 @@ enum KermitModes {
     KERMIT_MODE_UTILITY,
     KERMIT_MODE_EXTRA_1,
     KERMIT_MODE_EXTRA_2,
-};
+} KermitModes;
 
 /* Kermit `KERMIT_MODE_PERIPHERAL` commands */
-enum KermitPeripheralCmd {
+typedef enum KermitPeripheralCmd {
 	KERMIT_CMD_RTC_GET_CURRENT_TICK = 0x0,
 	KERMIT_CMD_ID_STORAGE_LOOKUP = 0x1,
 	KERMIT_CMD_POWER_FREQUENCY = 0x2,
@@ -59,10 +59,10 @@ enum KermitPeripheralCmd {
 	KERMIT_CMD_IS_FIRST_BOOT = 0xC,
 	KERMIT_CMD_GET_PREFIX_SSID = 0xD,
 	KERMIT_CMD_SET_PS_BUTTON_STATE = 0x10,
-};
+} KermitPeripheralCmd;
 
 /* Kermit `KERMIT_MODE_MSFS` commands */
-enum KermitMsfsCmd {
+typedef enum KermitMsfsCmd {
 	KERMIT_CMD_INIT_MS = 0x0,
 	KERMIT_CMD_EXIT_MS = 0x1,
 	KERMIT_CMD_OPEN_MS = 0x2,
@@ -82,34 +82,34 @@ enum KermitMsfsCmd {
 	KERMIT_CMD_RENAME_MS = 0x10,
 	KERMIT_CMD_CHDIR_MS = 0x11,
 	KERMIT_CMD_DEVCTL = 0x14,
-};
+} KermitMsfsCmd;
 
 /* Kermit `KERMIT_MODE_AUDIO` commands */
-enum KermitAudioCmd {
+typedef enum KermitAudioCmd {
 	KERMIT_CMD_INIT_AUDIO_IN = 0x0,
 	KERMIT_CMD_OUTPUT_1 = 0x1,
 	KERMIT_CMD_OUTPUT_2 = 0x2,
 	KERMIT_CMD_SUSPEND_AUDIO = 0x3,
 	KERMIT_CMD_RESUME = 0x4,
-};
+} KermitAudioCmd;
 
 /* Kermit `KERMIT_MODE_ME` commands */
-enum KermitMeCmd {
+typedef enum KermitMeCmd {
 	KERMIT_CMD_UNK0= 0x0,
 	KERMIT_CMD_SETAVC_TIMESTAMPINTERNAL= 0x1,
 	KERMIT_CMD_BOOT_START= 0x2,
-};
+} KermitMeCmd;
 
 /* Kermit `KERMIT_MODE_LOWIO` commands */
-enum KermitLowIoCmd {
+typedef enum KermitLowIoCmd {
 	KERMIT_CMD_UNK9 = 0x9,
 	KERMIT_CMD_UNKA = 0xA,
 	KERMIT_CMD_UNKB = 0xB,
 	KERMIT_CMD_UNKC = 0xC,
-};
+} KermitLowIoCmd;
 
 /* Kermit `KERMIT_MODE_WLAN` commands */
-enum KermitWlanCmd {
+typedef enum KermitWlanCmd {
 	KERMIT_CMD_INIT = 0x0,
 	KERMIT_CMD_GET_SWITCH_INTERNAL_STATE = 0x2,
 	KERMIT_CMD_GET_ETHER_ADDR = 0x3,
@@ -143,27 +143,27 @@ enum KermitWlanCmd {
 	KERMIT_CMD_SET_WOL_PARAM = 0x22,
 	KERMIT_CMD_GET_WOL_INFO = 0x23,
 	KERMIT_CMD_SET_HOST_DISCOVER = 0x24,
-};
+} KermitWlanCmd;
 
 /* Kermit `KERMIT_MODE_UTILITY` commands */
-enum KermitUtilityCmd {
+typedef enum KermitUtilityCmd {
 	KERMIT_CMD_OSK_START = 0x0,
 	KERMIT_CMD_OSK_SHUTDOWN = 0x1,
 	KERMIT_CMD_OSK_UPDATE = 0x3,
-};
+} KermitUtilityCmd;
 
 /* Kermit `KERMIT_MODE_USB` commands */
-enum KermitUsbCmd {
+typedef enum KermitUsbCmd {
 	KERMIT_CMD_INIT = 0x0,
 	KERMIT_CMD_ACTIVATE = 0x15,
 	KERMIT_CMD_DEACTIVATE = 0x16,
 	KERMIT_CMD_SET_OP = 0x19,
 	KERMIT_CMD_SET_OP_BIS = 0x1A,
 	KERMIT_CMD_UNK1B = 0x1B,
-};
+} KermitUsbCmd;
 
 
-enum KermitVirtualInterrupts {
+typedef enum KermitVirtualInterrupts {
     KERMIT_VIRTUAL_INTR_NONE,
     KERMIT_VIRTUAL_INTR_AUDIO_CH1,
     KERMIT_VIRTUAL_INTR_AUDIO_CH2,
@@ -178,12 +178,12 @@ enum KermitVirtualInterrupts {
     KERMIT_VIRTUAL_INTR_UNKNOWN_CH1,    // <- used after settings
     KERMIT_VIRTUAL_INTR_USBGPS_CH1,
     KERMIT_VIRTUAL_INTR_USBPSPCM_CH1,
-};
+} KermitVirtualInterrupts;
 
-enum KermitArgumentModes {
+typedef enum KermitArgumentModes {
 	KERMIT_INPUT_MODE = 0x1,
 	KERMIT_OUTPUT_MODE = 0x2,
-};
+} KermitArgumentModes;
 
 typedef struct {
     u32 cmd; //0x0

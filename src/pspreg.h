@@ -25,7 +25,7 @@
 #define REG_KEYNAME_SIZE 27
 
 /** Key types */
-enum RegKeyTypes {
+typedef enum RegKeyTypes {
 	/** Key is a directory */
 	REG_TYPE_DIR = 1,
 	/** Key is an integer (4 bytes) */
@@ -34,7 +34,7 @@ enum RegKeyTypes {
 	REG_TYPE_STR = 3,
 	/** Key is a binary string */
 	REG_TYPE_BIN = 4,
-};
+} RegKeyTypes;
 
 /** Typedef for a registry handle */
 typedef u32 REGHANDLE;

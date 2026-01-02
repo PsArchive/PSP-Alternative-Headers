@@ -21,7 +21,7 @@
 /**@{*/
 
 /** Enumeration of the remote keys */
-enum SceHprmKeys {
+typedef enum SceHprmKeys {
 	SCE_HPRM_PLAYPAUSE  = 0x1,
 	SCE_HPRM_FORWARD    = 0x4,
 	SCE_HPRM_BACK       = 0x8,
@@ -35,7 +35,7 @@ enum SceHprmKeys {
 	PSP_HPRM_VOL_UP		= SCE_HPRM_VOL_UP,
 	PSP_HPRM_VOL_DOWN   = SCE_HPRM_VOL_DOWN,
 	PSP_HPRM_HOLD       = SCE_HPRM_HOLD,
-};
+} SceHprmKeys;
 
 #ifdef __cplusplus
 extern "C" {

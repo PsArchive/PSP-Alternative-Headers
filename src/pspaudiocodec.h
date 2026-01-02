@@ -12,7 +12,7 @@
 #ifndef PSPAUDIO_CODEC_H
 #define PSPAUDIO_CODEC_H
 
-enum SceCodecKind {
+typedef enum SceCodecKind {
 	SCE_CODEC_AT3PLUS = 0x00001000,
 	SCE_CODEC_AT3 = 0x00001001,
 	SCE_CODEC_MP3 = 0x00001002,
@@ -24,7 +24,7 @@ enum SceCodecKind {
 	PSP_CODEC_AT3 = SCE_CODEC_AT3,
 	PSP_CODEC_MP3 = SCE_CODEC_MP3,
 	PSP_CODEC_AAC = SCE_CODEC_AAC,
-};
+} SceCodecKind;
 
 
 #ifdef __cplusplus

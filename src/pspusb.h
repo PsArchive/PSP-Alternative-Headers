@@ -17,7 +17,7 @@
 #define PSP_USBBUS_DRIVERNAME "USBBusDriver"
 
 //Defines for use with status function return values
-enum SceUsbStatus {
+typedef enum SceUsbStatus {
 	SCE_USB_ACTIVATED = 0x200,
 	SCE_USB_CABLE_CONNECTED = 0x020 ,
 	SCE_USB_CONNECTION_ESTABLISHED = 0x002,
@@ -25,7 +25,7 @@ enum SceUsbStatus {
 	PSP_USB_ACTIVATED = SCE_USB_ACTIVATED,
 	PSP_USB_CABLE_CONNECTED = SCE_USB_CABLE_CONNECTED,
 	PSP_USB_CONNECTION_ESTABLISHED = SCE_USB_CONNECTION_ESTABLISHED,
-};
+} SceUsbStatus;
 
 #ifdef __cplusplus
 extern "C" {

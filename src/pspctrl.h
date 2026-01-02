@@ -176,7 +176,7 @@ typedef enum SceCtrlButtons PspCtrlButtons;
 typedef enum SceCtrlMode PspCtrlMode;
 
 /** Button mask settings. */
-enum SceCtrlButtonMaskMode {
+typedef enum SceCtrlButtonMaskMode {
     /** No mask for the specified buttons. Button input is normally recognized. */
     SCE_CTRL_MASK_NO_MASK = 0,
     /**
@@ -192,17 +192,17 @@ enum SceCtrlButtonMaskMode {
 	 * You can only turn ON user buttons for applications running in User Mode.
      */
     SCE_CTRL_MASK_APPLY_BUTTONS = 2,
-};
+} SceCtrlButtonMaskMode;
 
 /** Specifies the type of input data to be obtained. */
-enum SceCtrlPort {
+typedef enum SceCtrlPort {
     /* Input is only obtained from the PSP. */
     SCE_CRTL_PORT_PSP = 0,
     /* Input is obtained from the PSP and a connected DualShock3 controller. */
     SCE_CTRL_PORT_DS3 = 1,
     /* Input is obtained from the PSP and an unknown connected external device. */
     SCE_CTRL_PORT_UNKNOWN_2 = 2
-};
+} SceCtrlPort;
 
 /** Returned controller data */
 typedef struct SceCtrlData {
@@ -712,7 +712,7 @@ int sceCtrlGetIdleCancelThreshold(int *idlerest, int *idleback);
 u32 sceCtrlSetButtonIntercept(u32 buttons, u32 mask_mode);
 
 /**
- * Get button mask mode
+ * Get button mask mode.
  *
  * @param buttons The buttons to check for. One or more buttons of `SceCtrlButtons`.
  *
@@ -730,7 +730,7 @@ u32 sceCtrlGetButtonIntercept(u32 buttons);
  * @param callback A pointer to the callback function handling the button callbacks.
  * @param opt Optional user argument. Passed to the callback function as its third argument.
  *
- * @return `0` on success.
+ * @return `0` on success, `< 0` on error.
  *
  * @attention Requires linking to `pspctrl_driver` stub to be available.
  */

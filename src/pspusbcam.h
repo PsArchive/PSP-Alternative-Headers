@@ -20,7 +20,7 @@
 /** Resolutions for sceUsbCamSetupStill &
                     sceUsbCamSetupVideo
  ** DO NOT use on sceUsbCamSetupStillEx & sceUsbCamSetupVideoEx */
-enum PspUsbCamResolution {
+typedef enum PspUsbCamResolution {
 	PSP_USBCAM_RESOLUTION_160_120  = 0,
 	PSP_USBCAM_RESOLUTION_176_144  = 1,
 	PSP_USBCAM_RESOLUTION_320_240  = 2,
@@ -30,12 +30,12 @@ enum PspUsbCamResolution {
 	PSP_USBCAM_RESOLUTION_1280_960 = 6,
 	PSP_USBCAM_RESOLUTION_480_272  = 7,
 	PSP_USBCAM_RESOLUTION_360_272  = 8,
-};
+} PspUsbCamResolution;
 
 /** Resolutions for sceUsbCamSetupStillEx &
                     sceUsbCamSetupVideoEx
  ** DO NOT use on sceUsbCamSetupStill & sceUsbCamSetupVideo */
-enum PspUsbCamResolutionEx {
+typedef enum PspUsbCamResolutionEx {
 	PSP_USBCAM_RESOLUTION_EX_160_120  = 0,
 	PSP_USBCAM_RESOLUTION_EX_176_144  = 1,
 	PSP_USBCAM_RESOLUTION_EX_320_240  = 2,
@@ -45,24 +45,24 @@ enum PspUsbCamResolutionEx {
 	PSP_USBCAM_RESOLUTION_EX_640_480  = 6,
 	PSP_USBCAM_RESOLUTION_EX_1024_768 = 7,
 	PSP_USBCAM_RESOLUTION_EX_1280_960 = 8,
-};
+} PspUsbCamResolutionEx;
 
 /** Flags for reverse effects. */
-enum PspUsbCamReverseFlags {
+typedef enum PspUsbCamReverseFlags {
 	PSP_USBCAM_FLIP = 1,
 	PSP_USBCAM_MIRROR = 0x100,
-};
+} PspUsbCamReverseFlags;
 
 /** Delay to take pictures */
-enum PspUsbCamDelay {
+typedef enum PspUsbCamDelay {
 	PSP_USBCAM_NODELAY = 0,
 	PSP_USBCAM_DELAY_10SEC = 1,
 	PSP_USBCAM_DELAY_20SEC = 2,
 	PSP_USBCAM_DELAY_30SEC = 3,
-};
+} PspUsbCamDelay;
 
 /** Usbcam framerates */
-enum PspUsbCamFrameRate {
+typedef enum PspUsbCamFrameRate {
 	PSP_USBCAM_FRAMERATE_3_75_FPS = 0, /* 3.75 fps */
 	PSP_USBCAM_FRAMERATE_5_FPS = 1,
 	PSP_USBCAM_FRAMERATE_7_5_FPS = 2, /* 7.5 fps */
@@ -71,18 +71,18 @@ enum PspUsbCamFrameRate {
 	PSP_USBCAM_FRAMERATE_20_FPS = 5,
 	PSP_USBCAM_FRAMERATE_30_FPS = 6,
 	PSP_USBCAM_FRAMERATE_60_FPS = 7,
-};
+} PspUsbCamFrameRate;
 
 /** White balance values */
-enum PspUsbCamWB {
+typedef enum PspUsbCamWB {
 	PSP_USBCAM_WB_AUTO = 0,
 	PSP_USBCAM_WB_DAYLIGHT = 1,
 	PSP_USBCAM_WB_FLUORESCENT = 2,
 	PSP_USBCAM_WB_INCADESCENT = 3,
-};
+} PspUsbCamWB;
 
 /** Effect modes */
-enum PspUsbCamEffectMode {
+typedef enum PspUsbCamEffectMode {
 	PSP_USBCAM_EFFECTMODE_NORMAL = 0,
 	PSP_USBCAM_EFFECTMODE_NEGATIVE = 1,
 	PSP_USBCAM_EFFECTMODE_BLACKWHITE = 2,
@@ -90,10 +90,10 @@ enum PspUsbCamEffectMode {
 	PSP_USBCAM_EFFECTMODE_BLUE = 4,
 	PSP_USBCAM_EFFECTMODE_RED = 5,
 	PSP_USBCAM_EFFECTMODE_GREEN = 6,
-};
+} SceUsbCamEffectMode;
 
 /** Exposure levels */
-enum PspUsbCamEVLevel {
+typedef enum PspUsbCamEVLevel {
 	PSP_USBCAM_EVLEVEL_2_0_POSITIVE = 0, // +2.0
 	PSP_USBCAM_EVLEVEL_1_7_POSITIVE = 1, // +1.7
 	PSP_USBCAM_EVLEVEL_1_5_POSITIVE = 2, // +1.5
@@ -111,7 +111,7 @@ enum PspUsbCamEVLevel {
 	PSP_USBCAM_EVLEVEL_1_5_NEGATIVE = 14, // -1.5
 	PSP_USBCAM_EVLEVEL_1_7_NEGATIVE = 15, // -1.7
 	PSP_USBCAM_EVLEVEL_2_0_NEGATIVE = 16, // -2.0
-};
+} SceUsbCamEVLevel;
 
 /** Structure for sceUsbCamSetupStill */
 typedef struct PspUsbCamSetupStillParam {

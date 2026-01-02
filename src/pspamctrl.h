@@ -27,7 +27,7 @@ typedef struct SceCipherKey {
 	u8 key[16];
 } SceCipherKey;
 
-enum SceMacKeyType {
+typedef enum SceMacKeyType {
 	MAC_KEY_TYPE_UNK0 = 0,
 	MAC_KEY_TYPE_UNK1 = 1,
 	/** Use fuse ID */
@@ -35,19 +35,19 @@ enum SceMacKeyType {
 	/** Use fixed key. MAC will need to encrypt again. */
 	MAC_KEY_TYPE_FIXED = 3,
 	MAC_KEY_TYPE_UNK6 = 6,
-};
+} SceMacKeyType;
 
-enum SceCipherKeyType {
+typedef enum SceCipherKeyType {
 	/** Use fixed key */
 	CIPHER_KEY_TYPE_FIXED = 1,
 	/** Use fuse ID */
 	CIPHER_KEY_TYPE_FUSE_ID = 2,
-};
+} SceCipherKeyType;
 
-enum SceCipherKeyMode {
+typedef enum SceCipherKeyMode {
 	CIPHER_KEY_MODE_ENCRYPT = 1,
 	CIPHER_KEY_MODE_DECRYPT = 2,
-};
+} SceCipherKeyMode;
 
 #ifdef __cplusplus
 extern "C" {

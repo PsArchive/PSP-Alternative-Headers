@@ -57,14 +57,14 @@
 #define SCE_AUDIO_ERROR_INVALID_VOLUME (0x8026000B)
 #define SCE_AUDIO_ERROR_INPUT_BUSY (0x80260010)
 
-enum PspAudioFormats {
+typedef enum PspAudioFormats {
 	/** Channel is set to stereo output. */
 	PSP_AUDIO_FORMAT_STEREO = 0,
 	/** Channel is set to mono output. */
 	PSP_AUDIO_FORMAT_MONO   = 0x10
-};
+} PspAudioFormats;
 
-enum SceFrequencies {
+typedef enum SceFrequencies {
 	SCE_FREQ_48000 = 48000,
 	SCE_FREQ_44100 = 44100,
 	SCE_FREQ_32000 = 32000,
@@ -74,7 +74,7 @@ enum SceFrequencies {
 	SCE_FREQ_12000 = 12000,
 	SCE_FREQ_11050 = 11050,
 	SCE_FREQ_8000 = 8000,
-};
+} SceFrequencies;
 
 typedef struct {
 	/** Unknown. Pass 0 */

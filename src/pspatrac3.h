@@ -44,15 +44,15 @@
 #define PSP_ATRAC_ERROR_ALLDATA_WAS_DECODED     (0x80630024)
 
 /* Audio Codec Types */
-enum SceAtracCodecType {
+typedef enum SceAtracCodecType {
 	// Compat
 
 	PSP_ATRAC_AT3PLUS = SCE_CODEC_AT3PLUS,
 	PSP_ATRAC_AT3 = SCE_CODEC_AT3,
-};
+} SceAtracCodecType;
 
 /* Remain Frame typical Status */
-enum SceAtracRemainFrameStatus {
+typedef enum SceAtracRemainFrameStatus {
 	SCE_ATRAC_ALLDATA_IS_ON_MEMORY = -1,
 	SCE_ATRAC_NONLOOP_STREAM_DATA_IS_ON_MEMORY = -2,
 	SCE_ATRAC_LOOP_STREAM_DATA_IS_ON_MEMORY = -3,
@@ -62,7 +62,7 @@ enum SceAtracRemainFrameStatus {
 	PSP_ATRAC_ALLDATA_IS_ON_MEMORY = SCE_ATRAC_ALLDATA_IS_ON_MEMORY,
 	PSP_ATRAC_NONLOOP_STREAM_DATA_IS_ON_MEMORY = SCE_ATRAC_NONLOOP_STREAM_DATA_IS_ON_MEMORY,
 	PSP_ATRAC_LOOP_STREAM_DATA_IS_ON_MEMORY = SCE_ATRAC_LOOP_STREAM_DATA_IS_ON_MEMORY,
-};
+} SceAtracRemainFrameStatus;
 
 typedef struct {
 	u8 *write_pos_first_buf;

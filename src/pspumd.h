@@ -33,7 +33,7 @@ typedef struct SceUmdInfo {
 typedef SceUmdInfo pspUmdInfo;
 
 /** Enumeration for UMD types */
-enum SceUmdTypes {
+typedef enum SceUmdTypes {
 	SCE_UMD_TYPE_GAME =		0x10,
 	SCE_UMD_TYPE_VIDEO =	0x20,
 	SCE_UMD_TYPE_AUDIO =	0x40,
@@ -41,10 +41,10 @@ enum SceUmdTypes {
 	PSP_UMD_TYPE_GAME =		SCE_UMD_TYPE_GAME,
 	PSP_UMD_TYPE_VIDEO =	SCE_UMD_TYPE_VIDEO,
 	PSP_UMD_TYPE_AUDIO =	SCE_UMD_TYPE_AUDIO,
-};
+} SceUmdTypes;
 
 /** Enumeration for UMD drive state */
-enum SceUmdState {
+typedef enum SceUmdState {
 	SCE_UMD_NOT_PRESENT =	0x01,
 	SCE_UMD_PRESENT =		0x02,
 	SCE_UMD_CHANGED =		0x04,
@@ -58,7 +58,7 @@ enum SceUmdState {
 	PSP_UMD_INITING =		SCE_UMD_INITING,
 	PSP_UMD_INITED =		SCE_UMD_INITED,
 	PSP_UMD_READY =			SCE_UMD_READY,
-};
+} SceUmdState;
 
 /** Enumeration for UMD stats (legacy) */
 enum UmdDriveStat {
