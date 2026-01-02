@@ -63,7 +63,9 @@ extern "C" {
  *
  * @param module - module to load (PSP_MODULE_xxx)
  *
- * @return 0 on success, < 0 on error
+ * @return `0` on success, `< 0` on error.
+ *
+ * @attention Requires linking to `psputility` stub to be available.
  */
 int sceUtilityLoadModule(int module);
 
@@ -72,7 +74,9 @@ int sceUtilityLoadModule(int module);
  *
  * @param module - module to unload (PSP_MODULE_xxx)
  *
- * @return 0 on success, < 0 on error
+ * @return `0` on success, `< 0` on error.
+ *
+ * @attention Requires linking to `psputility` stub to be available.
  */
 int sceUtilityUnloadModule(int module);
 

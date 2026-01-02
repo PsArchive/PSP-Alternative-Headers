@@ -248,6 +248,8 @@ extern "C" {
  *
  * @param params - savedata parameters
  * @return 0 on success
+ *
+ * @attention Requires linking to `psputility` stub to be available.
  */
 int sceUtilitySavedataInitStart(SceUtilitySavedataParam * params);
 
@@ -258,6 +260,8 @@ int sceUtilitySavedataInitStart(SceUtilitySavedataParam * params);
  * @return 2 if the process is still being processed.
  * 3 on save/load success, then you can call sceUtilitySavedataShutdownStart.
  * 4 on complete shutdown.
+ *
+ * @attention Requires linking to `psputility` stub to be available.
  */
 int sceUtilitySavedataGetStatus(void);
 
@@ -268,6 +272,7 @@ int sceUtilitySavedataGetStatus(void);
  *
  * @return 0 on success
  *
+ * @attention Requires linking to `psputility` stub to be available.
  */
 int sceUtilitySavedataShutdownStart(void);
 
@@ -275,6 +280,8 @@ int sceUtilitySavedataShutdownStart(void);
  * Refresh status of the savedata function
  *
  * @param unknown - unknown, pass 1
+ *
+ * @attention Requires linking to `psputility` stub to be available.
  */
 void sceUtilitySavedataUpdate(int unknown);
 

@@ -34,7 +34,10 @@ extern "C" {
  * Available on firmware 2.00 and higher only.
  *
  * @param module - module number to load (PSP_AV_MODULE_xxx)
- * @return 0 on success, < 0 on error
+ *
+ * @return `0` on success, `< 0` on error.
+ *
+ * @attention Requires linking to `psputility` stub to be available.
  */
 int sceUtilityLoadAvModule(int module);
 
@@ -43,7 +46,10 @@ int sceUtilityLoadAvModule(int module);
  * Available on firmware 2.00 and higher only.
  *
  * @param module - module number to be unloaded
- * @return 0 on success, < 0 on error
+ *
+ * @return `0` on success, `< 0` on error.
+ *
+ * @attention Requires linking to `psputility` stub to be available.
  */
 int sceUtilityUnloadAvModule(int module);
 

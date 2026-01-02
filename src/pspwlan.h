@@ -3,7 +3,7 @@
  * -----------------------------------------------------------------------
  * Licensed under the BSD license, see LICENSE in PSPSDK root for details.
  *
- * pspwlan.h - Prototypes for the sceWlan library
+ * pspwlan.h - Prototypes for the sceWlanDrv and sceWlanDrv_lib library
  *
  * Copyright (c) 2005 John Kelley <ps2dev@kelley.ca>
  *
@@ -23,6 +23,8 @@ extern "C" {
  * Determine if the wlan device is currently powered on.
  *
  * @return `0` if off, `1` if on.
+ *
+ * @attention Requires linking to `pspwlandrv` stub to be available.
  */
 int sceWlanDevIsPowerOn(void);
 
@@ -30,6 +32,8 @@ int sceWlanDevIsPowerOn(void);
  * Determine the state of the Wlan power switch.
  *
  * @return `0` if off, `1` if on.
+ *
+ * @attention Requires linking to `pspwlandrv` stub to be available.
  */
 int sceWlanGetSwitchState(void);
 
@@ -37,9 +41,11 @@ int sceWlanGetSwitchState(void);
  * Get the Ethernet Address of the wlan controller
  *
  * @param ether_addr A pointer to a buffer of bytes (NOTE: it only writes to `6` bytes, but
- * requests `8` so pass it `8` bytes just in case)
+ * requests `8` so pass it `8` bytes just in case).
  *
- * @return 0 on success, < 0 on error
+ * @return `0` on success, `< 0` on error.
+ *
+ * @attention Requires linking to `pspwlandrv` stub to be available.
  */
 int sceWlanGetEtherAddr(uint8_t *ether_addr);
 
@@ -47,6 +53,8 @@ int sceWlanGetEtherAddr(uint8_t *ether_addr);
  * Attach to the wlan device.
  *
  * @return `0` on success, `< 0` on error.
+ *
+ * @attention Requires linking to `pspwlandrv_lib` stub to be available.
  */
 int sceWlanDevAttach(void);
 
@@ -54,6 +62,8 @@ int sceWlanDevAttach(void);
  * Detach from the wlan device.
  *
  * @return `0` on success, `< 0` on error.
+ *
+ * @attention Requires linking to `pspwlandrv_lib` stub to be available.
  */
 int sceWlanDevDetach(void);
 

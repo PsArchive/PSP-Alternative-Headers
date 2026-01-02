@@ -56,61 +56,77 @@ extern "C" {
 #endif /* __cplusplus */
 
 /**
- * Initialize context
+ * Initialize context.
  *
- * @param ctx - Context
- * @param mode - Cipher mode
- * @return < 0 on error
+ * @param[inout] ctx A pointer to the context.
+ * @param mode The cipher mode, whichs sets the scramble key for kirk.
+ *
+ * @return `0` on success, `< 0` on error.
+ *
+ * @attention Requires linking to `pspchnnlsv` or `pspchnnlsv_driver` stubs to be available.
  */
 int sceSdSetIndex(SceSdContext1 *ctx, int mode);
 
 /**
  * Process data
  *
- * @param ctx - Context
- * @param data - Data (aligned to 0x10)
- * @param len - Length (aligned to 0x10)
- * @return < 0 on error
+ * @param[in] ctx A pointer to the context.
+ * @param[in] data The pointer to the data used in hash generation (aligned to `0x10`).
+ * @param size The size of data used for hash generation (aligned to `0x10`).
+ *
+ * @return `0` on success, `< 0` on error.
  */
-int sceSdRemoveValue(SceSdContext1 *ctx, unsigned char *data, int len);
+int sceSdRemoveValue(SceSdContext1 *ctx, u8 *data, int len);
 
 /**
  * Finalize hash
  *
- * @param ctx - Context
- * @param hash - Hash output (aligned to 0x10, 0x10 bytes long)
- * @param cryptkey - Crypt key or NULL.
- * @return < 0 on error
+ * @param[inout] ctx A pointer to the context.
+ * @param[out] hash The hash output (aligned to `0x10`, `0x10` bytes long).
+ * @param[in] crypt_key The crypt key or `NULL`. If provided, this key will also be used in the encryption process.
+ *
+ * @return `0` on success, `< 0` on error.
+ *
+ * @attention Requires linking to `pspchnnlsv` or `pspchnnlsv_driver` stubs to be available.
  */
-int sceSdGetLastIndex(SceSdContext1 *ctx, unsigned char *hash, unsigned char *cryptkey);
+int sceSdGetLastIndex(SceSdContext1 *ctx, u8 *hash, u8 *crypt_key);
 
 /**
  * Prepare a key, and set up integrity check
  *
- * @param ctx - Context
- * @param mode1 - Cipher mode
- * @param mode2 - Encrypt mode (1 = encrypting, 2 = decrypting)
- * @param hashkey - Key out
- * @param cipherkey - Key in
- * @return < 0 on error
+ * @param[inout] ctx A pointer to the context.
+ * @param mode The cipher mode. Different public keys/kirk commands will be used depending on the mode specified.
+ * @param encrypt_mode The encrypt mode (1 = encrypting, 2 = decrypting)
+ * @param[out] data A pointer to some data used for encryption/decryption.
+ * @param[in] priv_key The private key, or `NULL`. If specified, this key will be used as the private key for encryption/decryption.
+ *
+ * @return `0` on success, `< 0` on error.
+ *
+ * @attention Requires linking to `pspchnnlsv` or `pspchnnlsv_driver` stubs to be available.
  */
-int sceSdCreateList(SceSdContext2 *ctx, int mode1, int mode2, unsigned char *hashkey, unsigned char *cipherkey);
+int sceSdCreateList(SceSdContext2 *ctx, int mode, int encrypt_mode, u8 *data, u8 *priv_key);
 
 /**
  * Process data for integrity check
  *
- * @param ctx - Context
- * @param data - Data (aligned to 0x10)
- * @param len - Length (aligned to 0x10)
- * @return < 0 on error
+ * @param[inout] ctx A pointer to the context.
+ * @param data A pointer to the data used in the encryption/decryption process (aligned to `0x10`).
+ * @param size The size of `data` (aligned to `0x10`).
+ *
+ * @return `0` on success, `< 0` on error.
+ *
+ * @attention Requires linking to `pspchnnlsv` or `pspchnnlsv_driver` stubs to be available.
  */
-int sceSdSetMember(SceSdContext2 *ctx, unsigned char *data, int len);
+int sceSdSetMember(SceSdContext2 *ctx, u8 *data, int size);
 
 /**
  * Check integrity
  *
- * @param ctx - Context
- * @return < 0 on error
+ * @param[inout] ctx A pointer to the context.
+ *
+ * @return `0` on success, `< 0` on error.
+ *
+ * @attention Requires linking to `pspchnnlsv` or `pspchnnlsv_driver` stubs to be available.
  */
 int sceSdCleanList(SceSdContext2 *ctx);
 

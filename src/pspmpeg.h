@@ -89,11 +89,15 @@ extern "C" {
  * Initialize the Mpeg library.
  *
  * @return `0` if success.
+ *
+ * @attention Requires linking to `pspmpeg` stub to be available.
  */
 int sceMpegInit();
 
 /**
  * Finishes the Mpeg library.
+ *
+ *  @attention Requires linking to `pspmpeg` stub to be available.
  */
 void sceMpegFinish();
 
@@ -103,6 +107,8 @@ void sceMpegFinish();
  * @param num_packets The number of packets in the ringbuffer.
  *
  * @return `< 0` if error else ringbuffer data size.
+ *
+ *  @attention Requires linking to `pspmpeg` stub to be available.
  */
 int sceMpegRingbufferQueryMemSize(u32 num_packets);
 
@@ -117,6 +123,8 @@ int sceMpegRingbufferQueryMemSize(u32 num_packets);
  * @param[in] cb_param The param passed to callback.
  *
  * @return `0` if success.
+ *
+ *  @attention Requires linking to `pspmpeg` stub to be available.
  */
 int sceMpegRingbufferConstruct(SceMpegRingbuffer* ringbuffer, u32 packets, void *data, u32 data_size, sceMpegRingbufferCB callback, void *cb_param);
 
@@ -124,6 +132,8 @@ int sceMpegRingbufferConstruct(SceMpegRingbuffer* ringbuffer, u32 packets, void 
  * sceMpegRingbufferDestruct
  *
  * @param[inout] ringbuffer - pointer to a `sceMpegRingbuffer` struct
+ *
+ * @attention Requires linking to `pspmpeg` stub to be available.
  */
 void sceMpegRingbufferDestruct(SceMpegRingbuffer* ringbuffer);
 
@@ -133,6 +143,8 @@ void sceMpegRingbufferDestruct(SceMpegRingbuffer* ringbuffer);
  * @param[in] ringbuffer A pointer to a `sceMpegRingbuffer` struct.
  *
  * @return `< 0` if error else number of free packets in the ringbuffer.
+ *
+ * @attention Requires linking to `pspmpeg` stub to be available.
  */
 int sceMpegRingbufferAvailableSize(SceMpegRingbuffer* ringbuffer);
 
@@ -144,6 +156,8 @@ int sceMpegRingbufferAvailableSize(SceMpegRingbuffer* ringbuffer);
  * @param available_packets The free packets in the ringbuffer. It should be `sceMpegRingbufferAvailableSize()`.
  *
  * @return `< 0` if error, else number of packets.
+ *
+ * @attention Requires linking to `pspmpeg` stub to be available.
  */
 int sceMpegRingbufferPut(SceMpegRingbuffer* ringbuffer, u32 num_packets, u32 available_packets);
 
@@ -153,6 +167,8 @@ int sceMpegRingbufferPut(SceMpegRingbuffer* ringbuffer, u32 num_packets, u32 ava
  * @param unk Unknown, set to `0`
  *
  * @return `< 0` if error else decoder data size.
+ *
+ * @attention Requires linking to `pspmpeg` stub to be available.
  */
 int sceMpegQueryMemSize(int unk);
 
@@ -168,6 +184,8 @@ int sceMpegQueryMemSize(int unk);
  * @param unk2 Unknown, set to `0`.
  *
  * @return `0` if success.
+ *
+ * @attention Requires linking to `pspmpeg` stub to be available.
  */
 int sceMpegCreate(SceMpeg* mpeg, void *data, u32 data_size, SceMpegRingbuffer* ringbuffer, u32 frame_width, int unk1, int unk2);
 
@@ -175,6 +193,8 @@ int sceMpegCreate(SceMpeg* mpeg, void *data, u32 data_size, SceMpegRingbuffer* r
  * sceMpegDelete
  *
  * @param[inout] mpeg A pointer to a mpeg handler.
+ *
+ * @attention Requires linking to `pspmpeg` stub to be available.
  */
 SceVoid sceMpegDelete(SceMpeg* mpeg);
 
@@ -186,6 +206,8 @@ SceVoid sceMpegDelete(SceMpeg* mpeg);
  * @param[in] offset The stream offset in bytes. Usually `2048`.
  *
  * @return `0` if success.
+ *
+ * @attention Requires linking to `pspmpeg` stub to be available.
  */
 int sceMpegQueryStreamOffset(SceMpeg* mpeg, void *buffer, s32 *offset);
 
@@ -196,6 +218,8 @@ int sceMpegQueryStreamOffset(SceMpeg* mpeg, void *buffer, s32 *offset);
  * @param size The stream size in bytes.
  *
  * @return `0` if success.
+ *
+ * @attention Requires linking to `pspmpeg` stub to be available.
  */
 int sceMpegQueryStreamSize(void *buffer, u32 *size);
 
@@ -207,6 +231,8 @@ int sceMpegQueryStreamSize(void *buffer, u32 *size);
  * @param unk Unknown, set to `0`.
  *
  * @return `NULL` if error.
+ *
+ * @attention Requires linking to `pspmpeg` stub to be available.
  */
 SceMpegStream* sceMpegRegistStream(SceMpeg* mpeg, s32 stream_id, s32 unk);
 
@@ -215,6 +241,8 @@ SceMpegStream* sceMpegRegistStream(SceMpeg* mpeg, s32 stream_id, s32 unk);
  *
  * @param[inout] mpeg A pointer to a mpeg handler.
  * @param stream A pointer to stream.
+ *
+ * @attention Requires linking to `pspmpeg` stub to be available.
  */
 void sceMpegUnRegistStream(SceMpeg mpeg, SceMpegStream* stream);
 
@@ -224,6 +252,8 @@ void sceMpegUnRegistStream(SceMpeg mpeg, SceMpegStream* stream);
  * @param[inout] mpeg A pointer to a mpeg handler.
  *
  * @return `0` if success.
+ *
+ * @attention Requires linking to `pspmpeg` stub to be available.
  */
 int sceMpegFlushAllStream(SceMpeg* mpeg);
 
@@ -233,6 +263,8 @@ int sceMpegFlushAllStream(SceMpeg* mpeg);
  * @param[inout] mpeg A pointer to a mpeg handler.
  *
  * @return `0` if error, else, a pointer to buffer.
+ *
+ * @attention Requires linking to `pspmpeg` stub to be available.
  */
 void *sceMpegMallocAvcEsBuf(SceMpeg* mpeg);
 
@@ -241,6 +273,8 @@ void *sceMpegMallocAvcEsBuf(SceMpeg* mpeg);
  *
  * @param[inout] mpeg A pointer to a mpeg handler.
  * @param[in] buf A pointer to a buffer.
+ *
+ * @attention Requires linking to `pspmpeg` stub to be available.
  */
 void sceMpegFreeAvcEsBuf(SceMpeg* mpeg, void *buf);
 
@@ -252,6 +286,8 @@ void sceMpegFreeAvcEsBuf(SceMpeg* mpeg, void *buf);
  * @param[out] out_size - will contain size of decoded data
  *
  * @return `0` if success.
+ *
+ * @attention Requires linking to `pspmpeg` stub to be available.
  */
 int sceMpegQueryAtracEsSize(SceMpeg* mpeg, u32 *es_size, u32 *out_size);
 
@@ -263,6 +299,8 @@ int sceMpegQueryAtracEsSize(SceMpeg* mpeg, u32 *es_size, u32 *out_size);
  * @param[out] au A pointer to receive Au value.
  *
  * @return `0` if success.
+ *
+ * @attention Requires linking to `pspmpeg` stub to be available.
  */
 int sceMpegInitAu(SceMpeg* mpeg, void *es_buffer, SceMpegAu* au);
 
@@ -275,6 +313,8 @@ int sceMpegInitAu(SceMpeg* mpeg, void *es_buffer, SceMpegAu* au);
  * @param unk Unknown
  *
  * @return 0 if success.
+ *
+ * @attention Requires linking to `pspmpeg` stub to be available.
  */
 int sceMpegGetAvcAu(SceMpeg* mpeg, SceMpegStream* stream, SceMpegAu* au, int* unk);
 
@@ -285,6 +325,8 @@ int sceMpegGetAvcAu(SceMpeg* mpeg, SceMpegStream* stream, SceMpegAu* au, int* un
  * @param[in] mode A pointer to `SceMpegAvcMode` struct defining the decode mode (pixelformat).
  *
  * @return `0` if success.
+ *
+ * @attention Requires linking to `pspmpeg` stub to be available.
  */
 int sceMpegAvcDecodeMode(SceMpeg* mpeg, SceMpegAvcMode* mode);
 
@@ -298,6 +340,8 @@ int sceMpegAvcDecodeMode(SceMpeg* mpeg, SceMpegAvcMode* mode);
  * @param[out] is_init The initialization state. It will be set to `0` on first call, then `1`.
  *
  * @return `0` if success.
+ *
+ * @attention Requires linking to `pspmpeg` stub to be available.
  */
 int sceMpegAvcDecode(SceMpeg* mpeg, SceMpegAu* au, u32 frame_width, void *buffer, u32 *is_init);
 
@@ -310,6 +354,8 @@ int sceMpegAvcDecode(SceMpeg* mpeg, SceMpegAu* au, u32 frame_width, void *buffer
  * @param[out] status The frame number.
  *
  * @return `0` if success.
+ *
+ * @attention Requires linking to `pspmpeg` stub to be available.
  */
 int sceMpegAvcDecodeStop(SceMpeg* mpeg, int frame_width, ScePVoid buffer, int* status);
 
@@ -322,6 +368,8 @@ int sceMpegAvcDecodeStop(SceMpeg* mpeg, int frame_width, ScePVoid buffer, int* s
  * @param unk - unknown
  *
  * @return 0 if success.
+ *
+ * @attention Requires linking to `pspmpeg` stub to be available.
  */
 int sceMpegGetAtracAu(SceMpeg* mpeg, SceMpegStream* stream, SceMpegAu* au, void *unk);
 
@@ -334,6 +382,8 @@ int sceMpegGetAtracAu(SceMpeg* mpeg, SceMpegStream* stream, SceMpegAu* au, void 
  * @param[out] is_init The initialization state. It will be set to `0` on first call, then `1`.
  *
  * @return `0` if success.
+ *
+ * @attention Requires linking to `pspmpeg` stub to be available.
  */
 int sceMpegAtracDecode(SceMpeg* mpeg, SceMpegAu* au, void *buffer, int is_init);
 

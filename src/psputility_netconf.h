@@ -45,14 +45,18 @@ extern "C" {
  * Init the Network Configuration Dialog Utility
  *
  * @param data - pointer to pspUtilityNetconfData to be initialized
- * @return 0 on success, < 0 on error
+ * @return `0` on success, `< 0` on error.
+ *
+ * @attention Requires linking to `psputility` stub to be available.
  */
 int sceUtilityNetconfInitStart (pspUtilityNetconfData *data);
 
 /**
  * Shutdown the Network Configuration Dialog Utility
  *
- * @return 0 on success, < 0 on error
+ * @return `0` on success, `< 0` on error.
+ *
+ * @attention Requires linking to `psputility` stub to be available.
  */
 int sceUtilityNetconfShutdownStart (void);
 
@@ -60,7 +64,9 @@ int sceUtilityNetconfShutdownStart (void);
  * Update the Network Configuration Dialog GUI
  *
  * @param unknown - unknown; set to 1
- * @return 0 on success, < 0 on error
+ * @return `0` on success, `< 0` on error.
+ *
+ * @attention Requires linking to `psputility` stub to be available.
  */
 int sceUtilityNetconfUpdate (int unknown);
 
@@ -68,6 +74,8 @@ int sceUtilityNetconfUpdate (int unknown);
  * Get the status of a running Network Configuration Dialog
  *
  * @return one of pspUtilityDialogState on success, < 0 on error
+ *
+ * @attention Requires linking to `psputility` stub to be available.
  */
 int sceUtilityNetconfGetStatus (void);
 

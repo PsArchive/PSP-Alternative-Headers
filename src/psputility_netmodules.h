@@ -37,7 +37,10 @@ extern "C" {
  * Available on firmware 2.00 and higher only.
  *
  * @param module - module number to load (PSP_NET_MODULE_xxx)
- * @return 0 on success, < 0 on error
+ *
+ * @return `0` on success, `< 0` on error.
+ *
+ * @attention Requires linking to `psputility` stub to be available.
  */
 int sceUtilityLoadNetModule(int module);
 
@@ -46,7 +49,10 @@ int sceUtilityLoadNetModule(int module);
  * Available on firmware 2.00 and higher only.
  *
  * @param module - module number be unloaded
- * @return 0 on success, < 0 on error
+ *
+ * @return `0` on success, `< 0` on error.
+ *
+ * @attention Requires linking to `psputility` stub to be available.
  */
 int sceUtilityUnloadNetModule(int module);
 

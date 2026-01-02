@@ -30,7 +30,10 @@ extern "C" {
  * Available on firmware 2.70 and higher only.
  *
  * @param module - module number to load (PSP_USB_MODULE_xxx)
- * @return 0 on success, < 0 on error
+ *
+ * @return `0` on success, `< 0` on error.
+ *
+ * @attention Requires linking to `psputility` stub to be available.
 */
 int sceUtilityLoadUsbModule(int module);
 
@@ -39,7 +42,10 @@ int sceUtilityLoadUsbModule(int module);
  * Available on firmware 2.70 and higher only.
  *
  * @param module - module number to be unloaded
- * @return 0 on success, < 0 on error
+ *
+ * @return `0` on success, `< 0` on error.
+ *
+ * @attention Requires linking to `psputility` stub to be available.
 */
 int sceUtilityUnloadUsbModule(int module);
 

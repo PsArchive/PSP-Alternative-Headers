@@ -55,12 +55,17 @@ extern "C" {
  * Init the game sharing
  *
  * @param params - game sharing parameters
- * @return 0 on success, < 0 on error.
+ *
+ * @return `0` on success, `< 0` on error.
+ *
+ * @attention Requires linking to `psputility` stub to be available.
  */
 int sceUtilityGameSharingInitStart(pspUtilityGameSharingParams *params);
 
 /**
  * Shutdown game sharing.
+ *
+ * @attention Requires linking to `psputility` stub to be available.
  */
 void sceUtilityGameSharingShutdownStart(void);
 
@@ -70,6 +75,8 @@ void sceUtilityGameSharingShutdownStart(void);
  * @return 2 if the GUI is visible (you need to call sceUtilityGameSharingGetStatus).
  * 3 if the user cancelled the dialog, and you need to call sceUtilityGameSharingShutdownStart.
  * 4 if the dialog has been successfully shut down.
+ *
+ * @attention Requires linking to `psputility` stub to be available.
  */
 int sceUtilityGameSharingGetStatus(void);
 
@@ -77,6 +84,8 @@ int sceUtilityGameSharingGetStatus(void);
  * Refresh the GUI for game sharing
  *
  * @param n - unknown, pass 1
+ *
+ * @attention Requires linking to `psputility` stub to be available.
  */
 void sceUtilityGameSharingUpdate(int n);
 

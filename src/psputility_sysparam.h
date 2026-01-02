@@ -105,6 +105,8 @@ extern "C" {
  * @param id - which parameter to set
  * @param value - integer value to set
  * @return 0 on success, PSP_SYSTEMPARAM_RETVAL_FAIL on failure
+ *
+ * @attention Requires linking to `psputility` stub to be available.
  */
 int sceUtilitySetSystemParamInt(int id, int value);
 
@@ -114,6 +116,8 @@ int sceUtilitySetSystemParamInt(int id, int value);
  * @param id - which parameter to set
  * @param str - char * value to set
  * @return 0 on success, PSP_SYSTEMPARAM_RETVAL_FAIL on failure
+ *
+ * @attention Requires linking to `psputility` stub to be available.
  */
 int sceUtilitySetSystemParamString(int id, const char *str);
 
@@ -123,6 +127,8 @@ int sceUtilitySetSystemParamString(int id, const char *str);
  * @param id - which parameter to get
  * @param value - pointer to integer value to place result in
  * @return 0 on success, PSP_SYSTEMPARAM_RETVAL_FAIL on failure
+ *
+ * @attention Requires linking to `psputility` stub to be available.
  */
 int sceUtilityGetSystemParamInt( int id, int *value );
 
@@ -133,6 +139,8 @@ int sceUtilityGetSystemParamInt( int id, int *value );
  * @param str - char * buffer to place result in
  * @param len - length of str buffer
  * @return 0 on success, PSP_SYSTEMPARAM_RETVAL_FAIL on failure
+ *
+ * @attention Requires linking to `psputility` stub to be available.
  */
 int sceUtilityGetSystemParamString(int id, char *str, int len);
 

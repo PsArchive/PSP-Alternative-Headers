@@ -142,6 +142,8 @@ extern "C" {
  * @param params - OSK parameters.
  *
  * @return < 0 on error.
+ *
+ * @attention Requires linking to `psputility` stub to be available.
  */
 int sceUtilityOskInitStart(SceUtilityOskParams* params);
 
@@ -151,6 +153,8 @@ int sceUtilityOskInitStart(SceUtilityOskParams* params);
  * poll sceUtilityOskGetStatus() until it returns PSP_UTILITY_DIALOG_NONE.
  *
  * @return < 0 on error.
+ *
+ * @attention Requires linking to `psputility` stub to be available.
  */
 int sceUtilityOskShutdownStart(void);
 
@@ -160,13 +164,17 @@ int sceUtilityOskShutdownStart(void);
  * @param n - Unknown, pass 1.
  *
  * @return < 0 on error.
+ *
+ * @attention Requires linking to `psputility` stub to be available.
  */
 int sceUtilityOskUpdate(int n);
 
 /**
  * Get the status of a on-screen keyboard currently active.
  *
- * @return the current status of the keyboard. See ::pspUtilityDialogState for details.
+ * @return the current status of the keyboard. See `pspUtilityDialogState` for details.
+ *
+ * @attention Requires linking to `psputility` stub to be available.
  */
 int sceUtilityOskGetStatus(void);
 

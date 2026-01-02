@@ -57,6 +57,8 @@ extern "C" {
  *
  * @param id - id of net Configuration (1 to n)
  * @return 0 on success,
+ *
+ * @attention Requires linking to `psputility` stub to be available.
  */
 int sceUtilityCheckNetParam(int id);
 
@@ -68,6 +70,8 @@ int sceUtilityCheckNetParam(int id);
  * @param param - which parameter to get
  * @param data - parameter data
  * @return 0 on success,
+ *
+ * @attention Requires linking to `psputility` stub to be available.
  */
 int sceUtilityGetNetParam(int conf, int param, netData *data);
 
@@ -78,6 +82,8 @@ int sceUtilityGetNetParam(int conf, int param, netData *data);
  * @param conf - Net Configuration number (1 to n)
  *
  * @return 0 on success
+ *
+ * @attention Requires linking to `psputility` stub to be available.
  */
 int sceUtilityCreateNetParam(int conf);
 
@@ -88,7 +94,9 @@ int sceUtilityCreateNetParam(int conf);
  * @param param - Which parameter to set
  * @param val - Pointer to the the data to set
  *
- * @return 0 on success
+ * @return 0 on success.
+ *
+ * @attention Requires linking to `psputility` stub to be available.
  */
 int sceUtilitySetNetParam(int param, const void *val);
 
@@ -99,6 +107,8 @@ int sceUtilitySetNetParam(int param, const void *val);
  * @param dest - Destination Net Configuration number (0 to n)
  *
  * @return 0 on success
+ *
+ * @attention Requires linking to `psputility` stub to be available.
  */
 int sceUtilityCopyNetParam(int src, int dest);
 
@@ -108,6 +118,8 @@ int sceUtilityCopyNetParam(int src, int dest);
  * @param conf - Net Configuration number (1 to n)
  *
  * @return 0 on success
+ *
+ * @attention Requires linking to `psputility` stub to be available.
  */
 int sceUtilityDeleteNetParam(int conf);
 

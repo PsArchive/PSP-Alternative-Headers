@@ -53,33 +53,54 @@ extern "C" {
 #define paf_strtoul sce_paf_private_strtoul
 #define paf_wcslen sce_paf_private_wcslen
 
+/** @attention Requires linking to `psppaf` stub to be available. */
 char *sce_paf_private_strchr(const char *, int);
+/** @attention Requires linking to `psppaf` stub to be available. */
 char *sce_paf_private_strcpy(char *, const char *);
+/** @attention Requires linking to `psppaf` stub to be available. */
 char *sce_paf_private_strncpy(char *, const char *, int);
+/** @attention Requires linking to `psppaf` stub to be available. */
 char *sce_paf_private_strrchr(const char *, int);
+/** @attention Requires linking to `psppaf` stub to be available. */
 int sce_paf_private_snprintf(char *, SceSize, const char *, ...);
+/** @attention Requires linking to `psppaf` stub to be available. */
 int sce_paf_private_sprintf(char *, const char *, ...);
+/** @attention Requires linking to `psppaf` stub to be available. */
 int sce_paf_private_strcasecmp(const char *, const char *);
+/** @attention Requires linking to `psppaf` stub to be available. */
 int sce_paf_private_strcmp(const char *, const char *);
+/** @attention Requires linking to `psppaf` stub to be available. */
 int sce_paf_private_strlen(char *);
+/** @attention Requires linking to `psppaf` stub to be available. */
 int sce_paf_private_strncasecmp(const char *, const char *, SceSize);
+/** @attention Requires linking to `psppaf` stub to be available. */
 int sce_paf_private_strncmp(const char *, const char *, int);
+/** @attention Requires linking to `psppaf` stub to be available. */
 int sce_paf_private_strpbrk(const char *, const char *);
+/** @attention Requires linking to `psppaf` stub to be available. */
 int sce_paf_private_strtoul(const char *, char **, int);
+/** @attention Requires linking to `psppaf` stub to be available. */
 int sce_paf_private_wcslen(wchar_t *);
+/** @attention Requires linking to `psppaf` stub to be available. */
 void *sce_paf_private_malloc(int);
+/** @attention Requires linking to `psppaf` stub to be available. */
 void *sce_paf_private_memcpy(void *, void *, int);
+/** @attention Requires linking to `psppaf` stub to be available. */
 void *sce_paf_private_memset(void *, char, int);
+/** @attention Requires linking to `psppaf` stub to be available. */
 void sce_paf_private_free(void *);
 
 // TODO: Add more `sce_paf_private` functions
 
 
+/** @attention Requires linking to `psppaf` stub to be available. */
 int PAF_Resource_GetPageNodeByID(void *, char *, SceRcoEntry **);
+/** @attention Requires linking to `psppaf` stub to be available. */
 int PAF_Resource_ResolveRefWString(void *, u32 *, int *, char **, int *);
 
 /* Functions with popular naming */
 
+/** @attention Requires linking to `psppaf` stub to be available. */
 wchar_t *scePafGetText(void *, char *);
 
 #endif /* __USER__ */

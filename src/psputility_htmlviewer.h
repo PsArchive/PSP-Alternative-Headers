@@ -156,12 +156,16 @@ extern "C" {
  *
  * @param params - html viewer parameters
  *
- * @return 0 on success, < 0 on error.
+ * @return `0` on success, `< 0` on error.
+ *
+ * @attention Requires linking to `psputility` stub to be available.
  */
 int sceUtilityHtmlViewerInitStart(pspUtilityHtmlViewerParam *params);
 
 /**
  * Shutdown html viewer.
+ *
+ * @attention Requires linking to `psputility` stub to be available.
  */
 int sceUtilityHtmlViewerShutdownStart(void);
 
@@ -169,6 +173,8 @@ int sceUtilityHtmlViewerShutdownStart(void);
  * Refresh the GUI for html viewer
  *
  * @param n - unknown, pass 1
+ *
+ * @attention Requires linking to `psputility` stub to be available.
  */
 int sceUtilityHtmlViewerUpdate(int n);
 
@@ -178,6 +184,8 @@ int sceUtilityHtmlViewerUpdate(int n);
  * @return 2 if the GUI is visible (you need to call sceUtilityHtmlViewerGetStatus).
  * 3 if the user cancelled the dialog, and you need to call sceUtilityHtmlViewerShutdownStart.
  * 4 if the dialog has been successfully shut down.
+ *
+ * @attention Requires linking to `psputility` stub to be available.
  */
 int sceUtilityHtmlViewerGetStatus(void);
 

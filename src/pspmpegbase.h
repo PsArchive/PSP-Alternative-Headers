@@ -45,15 +45,16 @@ typedef struct SceMpegYCrCbBuffer {
 extern "C" {
 #endif /* __cplusplus */
 
-#ifdef __USER__
 
+/**  @attention Requires linking to `pspmpegbase` or `pspmpegbase_driver` stubs to be available. */
 int sceMpegBaseYCrCbCopyVme(void * yuv_buffer, int *buffer, int type);
+/**  @attention Requires linking to `pspmpegbase` or `pspmpegbase_driver` stubs to be available. */
 int sceMpegBaseCscInit(int width);
+/**  @attention Requires linking to `pspmpegbase` or `pspmpegbase_driver` stubs to be available. */
 int sceMpegBaseCscVme(void *rgb_buffer, void *rgb_buffer2, u32 width, SceMpegYCrCbBuffer* YCrCb_buffer);
-
+/**  @attention Requires linking to `pspmpegbase` or `pspmpegbase_driver` stubs to be available. */
 int sceMpegBasePESpacketCopy(SceMpegLLI *lli);
 
-#endif /* __USER__ */
 
 #ifdef __cplusplus
 }

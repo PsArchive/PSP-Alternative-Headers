@@ -532,7 +532,7 @@ int sceUsbCamSetZoom(int zoom);
  *
  * @param[out] saturation A pointer to a variable that receives the current saturation.
  *
- * @return 0 on success, < 0 on error
+ * @return `0` on success, `< 0` on error.
  *
  * @attention Requires linking to `pspusbcam` or `pspusbcam_driver` stubs to be available.
 */

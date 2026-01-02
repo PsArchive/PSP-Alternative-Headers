@@ -63,6 +63,8 @@ extern "C" {
  *
  * @param params - dialog parameters
  * @return 0 on success
+ *
+ * @attention Requires linking to `psputility` stub to be available.
  */
 int sceUtilityMsgDialogInitStart(pspUtilityMsgDialogParams *params);
 
@@ -70,6 +72,8 @@ int sceUtilityMsgDialogInitStart(pspUtilityMsgDialogParams *params);
  * Remove a message dialog currently active.  After calling this
  * function you need to keep calling GetStatus and Update until
  * you get a status of 4.
+ *
+ * @attention Requires linking to `psputility` stub to be available.
  */
 void sceUtilityMsgDialogShutdownStart(void);
 
@@ -79,6 +83,8 @@ void sceUtilityMsgDialogShutdownStart(void);
  * @return 2 if the GUI is visible (you need to call sceUtilityMsgDialogGetStatus).
  * 3 if the user cancelled the dialog, and you need to call sceUtilityMsgDialogShutdownStart.
  * 4 if the dialog has been successfully shut down.
+ *
+ * @attention Requires linking to `psputility` stub to be available.
  */
 int sceUtilityMsgDialogGetStatus(void);
 
@@ -86,11 +92,15 @@ int sceUtilityMsgDialogGetStatus(void);
  * Refresh the GUI for a message dialog currently active
  *
  * @param n - unknown, pass 1
+ *
+ * @attention Requires linking to `psputility` stub to be available.
  */
 void sceUtilityMsgDialogUpdate(int n);
 
 /**
  * Abort a message dialog currently active
+ *
+ * @attention Requires linking to `psputility` stub to be available.
  */
 int sceUtilityMsgDialogAbort(void);
 

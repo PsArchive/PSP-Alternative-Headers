@@ -24,6 +24,8 @@ extern "C" {
  * Inits the MJpeg library.
  *
  * @return `0` on success, `< 0` on error.
+ *
+ * @attention Requires linking to `pspjpeg` stub to be available.
 */
 int sceJpegInitMJpeg(void);
 
@@ -31,6 +33,8 @@ int sceJpegInitMJpeg(void);
  * Finishes the MJpeg library.
  *
  * @return `0` on success, `< 0` on error.
+ *
+ * @attention Requires linking to `pspjpeg` stub to be available.
 */
 int sceJpegFinishMJpeg(void);
 
@@ -41,6 +45,8 @@ int sceJpegFinishMJpeg(void);
  * @param height The height of the frame.
  *
  * @return `0` on success, `< 0` on error.
+ *
+ * @attention Requires linking to `pspjpeg` stub to be available.
 */
 int sceJpegCreateMJpeg(int width, int height);
 
@@ -48,6 +54,8 @@ int sceJpegCreateMJpeg(int width, int height);
  * Deletes the current decoder context.
  *
  * @return `0` on success, `< 0` on error.
+ *
+ * @attention Requires linking to `pspjpeg` stub to be available.
 */
 int sceJpegDeleteMJpeg(void);
 
@@ -62,6 +70,8 @@ int sceJpegDeleteMJpeg(void);
  * @param unk - Unknown, pass `0`.
  *
  * @return `(width * 65536) + height` on success, `< 0` on error.
+ *
+ * @attention Requires linking to `pspjpeg` stub to be available.
 */
 int sceJpegDecodeMJpeg(u8 *jpeg_buf,	SceSize size, u8 *rgba, u32 unk);
 
@@ -74,6 +84,8 @@ int sceJpegDecodeMJpeg(u8 *jpeg_buf,	SceSize size, u8 *rgba, u32 unk);
  * @param unk Unknown, pass `0`.
  *
  * @return number of bytes needed in the buffer that will be used for YCbCr decoding, `<= 0` on error.
+ *
+ * @attention Requires linking to `pspjpeg` stub to be available.
 */
 int sceJpegGetOutputInfo(u8 *jpeg_buf, SceSize size, int *color_info, int unk);
 
@@ -89,6 +101,8 @@ int sceJpegGetOutputInfo(u8 *jpeg_buf, SceSize size, int *color_info, int unk);
  * @param unk Unknown, pass `0`.
  *
  * @return `(width * 65536) + height` on success, `< 0` on error.
+ *
+ * @attention Requires linking to `pspjpeg` stub to be available.
 */
 int sceJpegDecodeMJpegYCbCr(u8 *jpeg_buf, SceSize size, u8 *ycbcr_buf, SceSize ycbcr_size, u32 unk);
 
@@ -103,6 +117,8 @@ int sceJpegDecodeMJpegYCbCr(u8 *jpeg_buf, SceSize size, u8 *ycbcr_buf, SceSize y
  * @param colour_info The chroma subsampling mode, as provided by `sceJpegGetOutputInfo()`.
  *
  * @return `0` on success, `< 0` on error.
+ *
+ * @attention Requires linking to `pspjpeg` stub to be available.
 */
 int sceJpegCsc(u8 *rgba_buf, u8 *ycbcr_buf, int width_height, int buf_width, int colour_info);
 
