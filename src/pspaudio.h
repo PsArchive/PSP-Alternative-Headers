@@ -148,7 +148,7 @@ int sceAudioOutput(int channel, int vol, void *buf);
   *
   * @param[out] buf A pointer to the PCM data to output.
   *
-  * @return `0` on success, an error if less than `0`.
+  * @return The number of queued samples on success, an error if less than `0`.
   *
   * @attention Requires linking to `pspaudio` or `pspaudio_driver` stubs to be available.
   */
@@ -182,7 +182,7 @@ int sceAudioOutputPanned(int channel, int left_vol, int right_vol, void *buf);
   *
   * @param[out] buf A pointer to the PCM data to output.
   *
-  * @return `0` on success, an error if less than `0`.
+  * @return The number of queued samples on success, an error if less than `0`.
   *
   * @attention Requires linking to `pspaudio` or `pspaudio_driver` stubs to be available.
   */
@@ -283,7 +283,7 @@ int sceAudioSRCChRelease(void);
   *
   * @param[out] buf A pointer to the PCM data to output.
   *
-  * @return `0` on success, an error if less than `0`.
+  * @return The number of queued samples on success, an error if less than `0`.
   *
   * @attention Requires linking to `pspaudio` or `pspaudio_driver` stubs to be available.
   */
