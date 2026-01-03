@@ -30,24 +30,30 @@ extern "C" {
 #ifdef __KERNEL__
 
 /**
- * Register a debug put character handler
+ * Register a debug put character handler.
  *
- * @param func - The put character function to register.
+ * @param func The put character function to register.
+ *
+ * @attention Requires linking to `pspkdebug_kernel` stub to be available.
  */
 void sceKernelRegisterDebugPutchar(PspDebugPutChar func);
 
 /**
- * Get the debug put character handler
+ * Get the debug put character handler.
  *
- * @return The current debug putchar handler
+ * @return The current debug putchar handler.
+ *
+ * @attention Requires linking to `pspkdebug_kernel` stub to be available.
  */
 PspDebugPutChar sceKernelGetDebugPutchar(void);
 
 /**
  * Kernel printf function.
  *
- * @param format - The format string.
- * @param ... - Arguments for the format string.
+ * @param format The format string.
+ * @param ... The arguments for the format string.
+ *
+ * @attention Requires linking to `pspkdebug_kernel` stub to be available.
  */
 void Kprintf(const char *format, ...) __attribute__((format(printf, 1, 2)));
 
