@@ -35,8 +35,6 @@ extern "C" {
  *
  * @return `0` on success, `< 0` on error.
  *
- * @attention Requires linking to `pspmp3` stub to be available.
- *
  * @attention Requires linking to `pspopenpsid` or `pspopenpsid_driver` stubs to be available.
  */
 int sceOpenPSIDGetOpenPSID(SceOpenPSID *openpsid);
