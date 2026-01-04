@@ -23,6 +23,37 @@ After that, I decided to explore more this idea.
 
 That being said, this is an experiment; and, although I'm currently keeping track of PSPSDK changes (as being a contributor as well), that is not a long-term promise as of now. If you are considering using this project on your project, take that as a big consideration. (This message will be changed if anything changes regarding that compromise with this project).
 
+## How to use
+
+Add this project as submodule to your project (or something similar on your setup):
+
+```sh
+git submodule add https://github.com/PsArchive/PSP-Alternative-Headers sdk
+```
+
+Then modify your project `Makefile` (assuming it is in your project's root folder):
+
+```diff
+- INCDIR = include
++ INCDIR = sdk/include include
+- include $(PSPSDK)/lib/build.mak
++ include sdk/lib/build.mak
+```
+
+If you are using `CMake`, add:
+
+1. If it is a user-level software:
+
+```diff
++ target_compile_definitions(your_project_name PRIVATE -D__USER__)
+```
+
+2. If it is a kernel-level software:
+
+```diff
++ target_compile_definitions(your_project_name PRIVATE -D__KERNEL__)
+```
+
 ## License
 
 This project is distributed under a [BSD-compatible license](https://github.com/pspdev/pspsdk/blob/master/LICENSE). See the `LICENSE` files for more information.
