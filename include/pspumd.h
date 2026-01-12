@@ -33,7 +33,7 @@ typedef struct SceUmdInfo {
 typedef SceUmdInfo pspUmdInfo;
 
 /** Enumeration for UMD types */
-typedef enum SceUmdTypes {
+typedef enum PspUmdTypes {
 	SCE_UMD_TYPE_GAME =		0x10,
 	SCE_UMD_TYPE_VIDEO =	0x20,
 	SCE_UMD_TYPE_AUDIO =	0x40,
